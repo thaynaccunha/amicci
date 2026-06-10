@@ -1,0 +1,2127 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Amicci · Calendário Oficial Jun–Ago 2026</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700;900&display=swap" rel="stylesheet">
+<style>
+:root{
+  --t:#0FC2C0;--te:#016071;--tqp:#002831;--nt:#53F3E4;--mg:#9B237F;
+  --tc:#304545;--ce:#212323;--tcl:#EAF9F8;--cz:#F2F6F5;--ts:rgba(15,194,192,.05);
+  --r4:4px;--r8:8px;--r16:16px;--sh:0 2px 10px rgba(1,96,113,.08);
+  --font:'Roboto',-apple-system,sans-serif;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:var(--font);background:#f4f9f9;color:var(--ce);font-size:13px;line-height:1.6}
+a{color:var(--te)}
+
+/* HEADER */
+header{background:linear-gradient(135deg,var(--tqp) 0%,var(--te) 100%);padding:18px 40px;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:10px}
+.brand{font-size:17px;font-weight:900;color:#fff;letter-spacing:-.02em}.brand span{color:var(--t)}
+.hright h1{font-size:14px;font-weight:700;color:#fff}.hright p{font-size:10px;color:rgba(255,255,255,.5);margin-top:2px}
+.sbadge{display:inline-block;background:rgba(255,193,7,.18);border:1px solid rgba(255,193,7,.4);color:#ffd54f;border-radius:99px;padding:2px 10px;font-size:10px;font-weight:600;margin-top:4px}
+
+/* NAV */
+nav{background:#fff;border-bottom:1px solid rgba(48,69,69,.1);padding:0 16px;display:flex;position:sticky;top:0;z-index:200;box-shadow:0 2px 8px rgba(1,96,113,.07);overflow-x:auto;gap:0;scroll-behavior:smooth}
+.tab{padding:11px 12px;font-size:11px;font-weight:500;color:var(--tc);cursor:pointer;border-bottom:3px solid transparent;transition:all .2s;white-space:nowrap;background:none;border-top:none;border-left:none;border-right:none;flex-shrink:0}
+.tab:hover{color:var(--te)}.tab.active{color:var(--te);border-bottom-color:var(--t)}
+
+main{max-width:1280px;margin:0 auto;padding:20px 28px}
+.section{display:none}.section.active{display:block}
+
+/* OVERVIEW */
+.ov{display:grid;grid-template-columns:repeat(7,1fr);gap:8px;margin-bottom:16px}
+.ovc{background:#fff;border-radius:var(--r8);padding:10px 12px;box-shadow:var(--sh);border-top:3px solid var(--t)}
+.ovn{font-size:20px;font-weight:900;color:var(--te)}.ovl{font-size:9px;color:var(--tc);text-transform:uppercase;letter-spacing:.06em;margin-top:1px}.ovs{font-size:9px;color:var(--t);margin-top:2px;font-weight:600}
+
+/* STRATEGY */
+.strategy{display:grid;grid-template-columns:repeat(4,1fr);gap:8px;margin-bottom:16px}
+.str{background:var(--tqp);border-radius:var(--r8);padding:12px 14px;color:#fff}
+.str h3{font-size:10px;font-weight:700;color:var(--nt);text-transform:uppercase;letter-spacing:.06em;margin-bottom:5px}
+.str p{font-size:11px;opacity:.78;line-height:1.6}
+
+/* INFO BOX */
+.info{background:var(--tcl);border-radius:var(--r8);padding:10px 14px;font-size:11px;color:var(--te);line-height:1.6;margin-bottom:12px}
+.info strong{font-weight:700}
+
+/* LEGEND */
+.legend{display:flex;flex-wrap:wrap;gap:5px;margin-bottom:12px}
+.leg{display:flex;align-items:center;gap:4px;font-size:10px;color:var(--tc);background:#fff;border-radius:99px;padding:2px 9px;border:1px solid rgba(48,69,69,.12);white-space:nowrap}
+.ld{width:6px;height:6px;border-radius:50%;flex-shrink:0}
+
+/* MONTH/WEEK */
+.month-t{font-size:11px;font-weight:700;color:var(--te);text-transform:uppercase;letter-spacing:.08em;margin:18px 0 8px;padding-bottom:4px;border-bottom:2px solid var(--t)}
+.week{background:#fff;border-radius:var(--r8);box-shadow:var(--sh);margin-bottom:10px;overflow:hidden}
+.week-h{background:var(--tqp);color:#fff;padding:6px 12px;font-size:10px;font-weight:700;letter-spacing:.05em;display:flex;align-items:center;justify-content:space-between}
+.week-h span{font-size:9px;opacity:.5;font-weight:400}
+
+/* TABLE */
+table.ct{width:100%;border-collapse:collapse;font-size:11px}
+table.ct th{background:rgba(1,96,113,.05);color:var(--tc);padding:5px 9px;text-align:left;font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:.05em;white-space:nowrap}
+table.ct td{padding:0;border-bottom:1px solid rgba(48,69,69,.06);vertical-align:top}
+table.ct tr:last-child td{border-bottom:none}
+table.ct tr:hover td{background:var(--ts)}
+table.ct tr.tbd td{opacity:.38;font-style:italic}
+
+/* POST ROW — accordion structure */
+.td-inner{padding:7px 9px}
+.dc{font-weight:700;color:var(--te);white-space:nowrap;font-size:11px}
+.dy{font-size:9px;color:var(--tc);white-space:nowrap}
+.bdg{display:inline-block;border-radius:99px;padding:2px 7px;font-size:9px;font-weight:700;white-space:nowrap}
+.b-li{background:#ddeefa;color:#0a3a6a}.b-ig{background:#f0e4fb;color:#4a1a7a}.b-yt{background:#fce4e4;color:#7a1a1a}
+.b-em{background:#fef3e2;color:#7a3a00}.b-liig{background:linear-gradient(90deg,#ddeefa,#f0e4fb);color:#1a1a7a}
+.b-wake{background:#e8eaf6;color:#1a237e}
+.cdot{display:inline-block;width:6px;height:6px;border-radius:50%;margin-right:3px;vertical-align:middle}
+.cl-cotton{background:#5B6AF0}.cl-carrefour{background:#016071}.cl-sumire{background:#9B237F}
+.cl-temperola{background:#0FC2C0}.cl-promofarma{background:#F4720B}.cl-petz{background:#27ae60}
+.cl-cremer{background:#E8B400}.cl-zinho{background:#e74c3c}.cl-tintas{background:#8e44ad}
+.cl-nagumo{background:#16a085}.cl-inst{background:#002831}.cl-johnny{background:#d35400}
+.cl-dunn{background:#283593}.cl-sa{background:#880e4f}.cl-tbd{background:#bbb}
+.tp{display:inline-block;border-radius:var(--r4);padding:1px 5px;font-size:9px;font-weight:600;margin-left:2px}
+.tp-wake{background:#e8eaf6;color:#1a237e}.tp-inst{background:var(--cz);color:var(--tc)}
+.tp-case{background:#e4faf9;color:#026060}.tp-dado{background:#e8f5e9;color:#1b5e20}
+.pr{font-weight:600;color:var(--ce);font-size:11px;margin-bottom:2px}
+.sr{font-size:10px;color:var(--tc);line-height:1.4}
+
+/* POST DETAIL ACCORDION */
+.post-toggle{cursor:pointer;display:inline-flex;align-items:center;gap:4px;font-size:10px;font-weight:600;color:var(--te);margin-top:4px;user-select:none;border:1px solid rgba(1,96,113,.2);border-radius:99px;padding:2px 8px;transition:background .15s}
+.post-toggle:hover{background:var(--tcl)}
+.post-toggle .ti{font-size:11px;transition:transform .2s;display:inline-block}
+.post-body{display:none;border-top:1px solid rgba(48,69,69,.07);background:#fafefe}
+.post-body.open{display:block}
+.pb-inner{padding:14px;display:grid;grid-template-columns:1fr 1fr;gap:16px}
+.pb-full{padding:14px}
+
+/* COPY + BRIEF BLOCKS */
+.cb-label{font-size:9px;font-weight:700;text-transform:uppercase;letter-spacing:.07em;color:var(--t);margin-bottom:4px}
+.cb-copy{font-size:11px;color:var(--ce);line-height:1.75;background:var(--cz);padding:12px;border-radius:var(--r8);white-space:pre-wrap}
+.cb-brief{background:#fff;border:1px solid rgba(48,69,69,.1);border-radius:var(--r8);padding:12px}
+.cb-brief-title{font-size:11px;font-weight:700;color:var(--te);margin-bottom:8px;padding-bottom:4px;border-bottom:1px solid rgba(48,69,69,.08)}
+.bf{display:flex;gap:6px;margin-bottom:4px;font-size:10px}
+.bfk{font-weight:600;color:var(--tc);min-width:110px;flex-shrink:0}
+.bfv{color:var(--ce);flex:1;line-height:1.5}
+.bfhl{font-size:12px;font-weight:700;color:var(--te)}
+.bf-div{border:none;border-top:1px solid rgba(48,69,69,.08);margin:5px 0}
+.cb-cta{background:var(--tcl);border-radius:var(--r4);padding:6px 10px;margin-top:8px;font-size:10px}
+.cb-cta strong{color:var(--te);font-weight:700;font-size:9px;text-transform:uppercase;letter-spacing:.06em;display:block;margin-bottom:2px}
+.status-r{display:inline-block;background:#fff8e1;color:#7a5200;border:1px solid #ffd54f33;border-radius:99px;padding:1px 7px;font-size:9px;font-weight:600;margin-top:6px}
+.status-w{display:inline-block;background:var(--cz);color:var(--tc);border-radius:99px;padding:1px 7px;font-size:9px;font-weight:600;margin-top:6px}
+.nota{background:rgba(15,194,192,.06);border-left:3px solid var(--t);border-radius:0 var(--r4) var(--r4) 0;padding:5px 9px;font-size:10px;color:var(--tc);margin-top:6px;line-height:1.5}
+.nota.off{background:#f5f5f5;border-left-color:#ccc;color:#888;margin:8px 12px}
+
+/* EMAIL */
+.email-ph{background:linear-gradient(90deg,var(--tqp),var(--te));color:#fff;padding:7px 12px;font-size:10px;font-weight:700;display:flex;justify-content:space-between;border-radius:var(--r8) var(--r8) 0 0;margin-top:14px}
+.email-ph span{opacity:.55;font-weight:400}
+.ecard{background:#fff;border-left:3px solid var(--t);margin-bottom:7px;border-radius:0 var(--r8) var(--r8) 0;box-shadow:var(--sh);overflow:hidden}
+.ecard-h{padding:8px 12px;display:flex;align-items:flex-start;justify-content:space-between;cursor:pointer;transition:background .15s;gap:8px}
+.ecard-h:hover{background:var(--tcl)}
+.ec-n{font-size:9px;font-weight:700;color:var(--t);margin-bottom:1px}
+.ec-title{font-size:11px;font-weight:700;color:var(--ce)}.ec-meta{font-size:9px;color:var(--tc);margin-top:2px}
+.ticon{font-size:12px;color:var(--t);transition:transform .2s;flex-shrink:0}
+.ecard-body{display:none;border-top:1px solid rgba(48,69,69,.07);padding:12px}.ecard-body.open{display:block}
+.ef-label{font-size:9px;font-weight:700;text-transform:uppercase;letter-spacing:.06em;color:var(--t);margin-bottom:3px;margin-top:8px}
+.ef-label:first-child{margin-top:0}
+.ef-sub{font-size:11px;font-weight:700;color:var(--ce);background:var(--cz);padding:6px 9px;border-radius:var(--r4)}
+.ef-pre{font-size:10px;color:var(--tc);font-style:italic;padding:3px 0}
+.ef-body{font-size:11px;color:var(--ce);line-height:1.75;background:var(--cz);padding:11px;border-radius:var(--r8);white-space:pre-wrap}
+.cta-pill{display:inline-block;background:var(--t);color:#fff;border-radius:99px;padding:4px 12px;font-size:10px;font-weight:700;margin-top:4px}
+.ftag{display:inline-block;border-radius:99px;padding:1px 7px;font-size:9px;font-weight:600}
+.f1{background:#fff3e0;color:#7a3a00}.f2{background:var(--tcl);color:var(--te)}.f3{background:#e8eaf6;color:#283593}.f4{background:#fce4ec;color:#880e4f}
+.anchor{background:rgba(192,57,43,.06);border:1px solid rgba(192,57,43,.15);border-radius:var(--r4);padding:5px 9px;font-size:10px;color:#7a1a1a;margin-top:6px;line-height:1.5}
+.em-anchor{font-size:9px;font-weight:700;color:#7a3a00;background:#fef3e2;border-radius:var(--r4);padding:1px 6px;display:inline-block;margin-top:3px}
+
+/* WAKE CARDS */
+.wake-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(240px,1fr));gap:8px;margin-bottom:14px}
+.wcard{background:#fff;border-radius:var(--r8);box-shadow:var(--sh);border-top:3px solid #1a237e;padding:11px 13px}
+.wcard-lbl{font-size:9px;font-weight:700;text-transform:uppercase;letter-spacing:.06em;color:#1a237e;margin-bottom:3px}
+.wcard-t{font-size:11px;font-weight:700;color:var(--ce);margin-bottom:3px}
+.wcard-m{font-size:10px;color:var(--tc);line-height:1.45}
+.wcard-theme{display:inline-block;border-radius:var(--r4);background:#e8eaf6;color:#1a237e;padding:1px 6px;font-size:9px;font-weight:600;margin-top:3px}
+
+/* FONTE CARD — for article / research references */
+.fonte-card{background:#fff;border-radius:var(--r8);box-shadow:var(--sh);border-left:4px solid var(--mg);padding:11px 13px;margin-bottom:8px}
+.fonte-card-h{font-size:11px;font-weight:700;color:var(--mg);margin-bottom:5px}
+.fonte-card p{font-size:11px;color:var(--ce);line-height:1.65}
+.fonte-tag{display:inline-block;border-radius:99px;background:#f3e5f5;color:var(--mg);padding:1px 8px;font-size:9px;font-weight:600;margin-right:4px;margin-bottom:4px}
+
+footer{background:var(--tqp);padding:12px 40px;display:flex;align-items:center;justify-content:space-between;margin-top:24px;flex-wrap:wrap;gap:8px}
+.fb{font-size:10px;color:rgba(255,255,255,.45)}.fb strong{color:var(--t)}
+</style>
+</head>
+<body>
+<header>
+  <div><div class="brand">a<span>micci</span></div><div style="font-size:9px;color:rgba(255,255,255,.4);margin-top:1px">Marcas próprias <strong style="color:var(--t)">fortes</strong> com Amicci</div></div>
+  <div class="hright" style="text-align:right">
+    <h1>Calendário Oficial — 18 Jun a 22 Ago 2026</h1>
+    <p>Amicci Histórias · YT · LI · IG · Posts Estáticos · E-mail Varejo + Indústria · Copies + Briefs</p>
+    <div class="sbadge">Rascunho — aguardando aprovação · documento vivo</div>
+  </div>
+</header>
+<nav id="main-nav">
+  <button class="tab active" onclick="showTab('visao')">Visão Geral</button>
+  <button class="tab" onclick="showTab('fontes')">Fontes &amp; Matéria-prima</button>
+  <button class="tab" onclick="showTab('junho')">Junho</button>
+  <button class="tab" onclick="showTab('julho')">Julho</button>
+  <button class="tab" onclick="showTab('agosto')">Agosto</button>
+  <button class="tab" onclick="showTab('estaticos')">Posts Estáticos</button>
+  <button class="tab" onclick="showTab('ev')">E-mail · Varejo</button>
+  <button class="tab" onclick="showTab('ei')">E-mail · Indústria</button>
+</nav>
+<main>
+<!-- ═══ VISÃO GERAL ═══ -->
+<div id="visao" class="section active">
+  <div class="ov">
+    <div class="ovc"><div class="ovn">10</div><div class="ovl">Cases / Clientes</div><div class="ovs">8 prontos · 2 em ago</div></div>
+    <div class="ovc"><div class="ovn">28+</div><div class="ovl">Cortes sociais</div><div class="ovs">YT · LI · IG</div></div>
+    <div class="ovc"><div class="ovn">20+</div><div class="ovl">Posts estáticos</div><div class="ovs">Wake Commerce style</div></div>
+    <div class="ovc"><div class="ovn">10</div><div class="ovl">E-mails Varejo</div><div class="ovs">4 fases</div></div>
+    <div class="ovc"><div class="ovn">8</div><div class="ovl">E-mails Indústria</div><div class="ovs">Régua separada</div></div>
+    <div class="ovc"><div class="ovn">22/ago</div><div class="ovl">Encerramento</div><div class="ovs">Ritmo espaçado após</div></div>
+    <div class="ovc"><div class="ovn">3</div><div class="ovl">Fontes editoriais</div><div class="ovs">dunnhumby · Sá · KV</div></div>
+  </div>
+
+  <div class="strategy">
+    <div class="str"><h3>Régua de canal</h3><p>YouTube = vídeo completo. LinkedIn = corte com dado e resultado de negócio. Instagram = corte emocional e narrativa humana. Cortes nas redes antecedem o e-mail em 2–3 dias.</p></div>
+    <div class="str"><h3>Intercalação</h3><p>Clientes se alternam semana a semana. Lançamento (18 jun) sobe Cottonbaby, Carrefour e Sumirê no YouTube. Temperola semana seguinte. Os demais se distribuem até agosto. Tintas MC e Nagumo reservados para agosto.</p></div>
+    <div class="str"><h3>Posts estáticos</h3><p>Carrosséis e estáticos no estilo Wake Commerce circulam na semana do case como camada adicional. Foco em dados, resultados e frameworks. Johnny entra em formato estático pós-campanha (após 22 ago).</p></div>
+    <div class="str"><h3>Fontes editoriais</h3><p>dunnhumby RPI 2026 (APAS Show), artigo Antônio Sá (Super Varejo maio 2026) e Key Visual da Amicci alimentam posts de P2 (dados) e P1 (reposicionamento) ao longo dos três meses.</p></div>
+  </div>
+
+  <div class="legend">
+    <div class="leg"><span class="ld cl-cotton"></span>Cottonbaby</div>
+    <div class="leg"><span class="ld cl-carrefour"></span>Carrefour</div>
+    <div class="leg"><span class="ld cl-sumire"></span>Sumirê</div>
+    <div class="leg"><span class="ld cl-temperola"></span>Temperola</div>
+    <div class="leg"><span class="ld cl-promofarma"></span>Promofarma</div>
+    <div class="leg"><span class="ld cl-petz"></span>Petz</div>
+    <div class="leg"><span class="ld cl-cremer"></span>Cremer</div>
+    <div class="leg"><span class="ld cl-zinho"></span>Zinho</div>
+    <div class="leg"><span class="ld cl-tintas"></span>Tintas MC</div>
+    <div class="leg"><span class="ld cl-nagumo"></span>Nagumo</div>
+    <div class="leg"><span class="ld cl-inst"></span>Institucional</div>
+    <div class="leg"><span class="ld cl-dunn"></span>dunnhumby</div>
+    <div class="leg"><span class="ld cl-sa"></span>Artigo Sá</div>
+    <div class="leg"><span class="ld" style="background:#1a237e"></span>Wake estático</div>
+  </div>
+
+  <table class="ct">
+    <thead><tr><th>Cliente</th><th>Status</th><th>YT</th><th>LI — corte dados</th><th>IG — corte emocional</th><th>Wake estático</th><th>Semana</th></tr></thead>
+    <tbody>
+      <tr><td class="td-inner"><strong><span class="cdot cl-cotton"></span>Cottonbaby</strong></td><td class="td-inner"><span class="status-r">Pronto</span></td><td class="td-inner">Vídeo completo</td><td class="td-inner">Amicci como relógio · Fizemos a coisa certa + Indux</td><td class="td-inner">Por que indicaria a Amicci</td><td class="td-inner">Precisão operacional em dados</td><td class="td-inner">18–20 jun</td></tr>
+      <tr><td class="td-inner"><strong><span class="cdot cl-carrefour"></span>Carrefour</strong></td><td class="td-inner"><span class="status-r">Pronto</span></td><td class="td-inner">Vídeo completo</td><td class="td-inner">MDD + parceria Amicci · Penetração Sam's Club</td><td class="td-inner">Sinergia Amicci + Carrefour + fornecedores</td><td class="td-inner">21% das vendas em destaque</td><td class="td-inner">18–20 jun</td></tr>
+      <tr><td class="td-inner"><strong><span class="cdot cl-sumire"></span>Sumirê</strong></td><td class="td-inner"><span class="status-r">Pronto</span></td><td class="td-inner">Vídeo completo</td><td class="td-inner">Coloração: categoria e dados · Como Amicci ajudou</td><td class="td-inner">Novidades mastigáveis</td><td class="td-inner">500 produtos — uma jornada</td><td class="td-inner">18–20 jun</td></tr>
+      <tr><td class="td-inner"><strong><span class="cdot cl-temperola"></span>Temperola</strong></td><td class="td-inner"><span class="status-r">Pronto</span></td><td class="td-inner">Vídeo completo</td><td class="td-inner">10% → 40% receita · PLMA + crédito</td><td class="td-inner">Sobre crédito (narrativa pessoal)</td><td class="td-inner">De 10 a 40 — antes/depois</td><td class="td-inner">23–27 jun</td></tr>
+      <tr><td class="td-inner"><strong><span class="cdot cl-promofarma"></span>Promofarma</strong></td><td class="td-inner"><span class="status-r">Pronto</span></td><td class="td-inner">Vídeo completo</td><td class="td-inner">Corte A · Corte B (confirmar após edição)</td><td class="td-inner">Corte A · Corte B (confirmar)</td><td class="td-inner">Resultado principal</td><td class="td-inner">07–11 jul</td></tr>
+      <tr><td class="td-inner"><strong><span class="cdot cl-petz"></span>Petz</strong></td><td class="td-inner"><span class="status-r">Pronto</span></td><td class="td-inner">Vídeo completo</td><td class="td-inner">Equipe dedicada a PL · Pós ZeeDog (confirmar)</td><td class="td-inner">A grande sacada do Sá · Por que indicaria (confirmar)</td><td class="td-inner">Equipe dedicada PL</td><td class="td-inner">14–18 jul</td></tr>
+      <tr><td class="td-inner"><strong><span class="cdot cl-cremer"></span>Cremer</strong></td><td class="td-inner"><span class="status-r">Pronto</span></td><td class="td-inner">Vídeo completo</td><td class="td-inner">3 ingredientes do sucesso · Parceria PLMA (confirmar)</td><td class="td-inner">Importância da parceria · Amicci impulsiona indústria (confirmar)</td><td class="td-inner">Framework 3 ingredientes</td><td class="td-inner">21–25 jul</td></tr>
+      <tr><td class="td-inner"><strong><span class="cdot cl-zinho"></span>Zinho</strong></td><td class="td-inner"><span class="status-r">Pronto</span></td><td class="td-inner">Vídeo completo</td><td class="td-inner">Impacto MDD na Zinho · Indux (confirmar)</td><td class="td-inner">Match discurso · Impacto transformação (confirmar)</td><td class="td-inner">Impacto em dados</td><td class="td-inner">28 jul–01 ago</td></tr>
+      <tr><td class="td-inner"><strong><span class="cdot cl-tintas"></span>Tintas MC</strong></td><td class="td-inner"><span class="status-w">Ago</span></td><td class="td-inner">A definir após edição</td><td class="td-inner">Corte A (a definir)</td><td class="td-inner">Corte B (a definir)</td><td class="td-inner">A definir</td><td class="td-inner">04–08 ago</td></tr>
+      <tr><td class="td-inner"><strong><span class="cdot cl-nagumo"></span>Nagumo</strong></td><td class="td-inner"><span class="status-w">Ago</span></td><td class="td-inner">A definir após edição</td><td class="td-inner">Corte A (a definir)</td><td class="td-inner">Corte B (a definir)</td><td class="td-inner">A definir</td><td class="td-inner">11–15 ago</td></tr>
+    </tbody>
+  </table>
+</div>
+
+<!-- ═══ FONTES & MATÉRIA-PRIMA ═══ -->
+<div id="fontes" class="section">
+  <div class="info"><strong>Fontes editoriais do projeto:</strong> Todo conteúdo de dados, reposicionamento e autoridade parte das fontes abaixo. Cada fonte tem aplicações editoriais mapeadas por pilar e data sugerida de uso.</div>
+
+  <div class="month-t">dunnhumby RPI Brasil 2026 — APAS Show</div>
+  <div class="fonte-card">
+    <div class="fonte-card-h">dunnhumby · Retail Preference Index Brasil 2026</div>
+    <p>5ª edição do estudo. Mais de 11 mil respondentes. Mais de 60 varejistas. Consolidado nas Américas pela primeira vez. Apresentado no Fórum de Marcas Próprias da APAS Show 2026.</p>
+    <br>
+    <p><strong>Dados-chave para uso editorial:</strong></p>
+    <br>
+    <span class="fonte-tag">P2 · Dado</span><strong>4x a 10x crescimento:</strong> portfólios de MDD de alta qualidade geram crescimento 4x a 10x maior nas vendas do varejo em geral (fonte: dunnhumby 6th RPI US Grocery). Varejistas com melhor percepção de MDD crescem em média 7% a.a. vs 1% dos demais.<br><br>
+    <span class="fonte-tag">P2 · Dado</span><strong>70% vs 44%:</strong> varejistas com melhor percepção de MDD têm 70% dos clientes que "adoram" suas marcas próprias. Varejistas com pior percepção: 44%.<br><br>
+    <span class="fonte-tag">P2 · Dado</span><strong>MDD e share of wallet (SOW):</strong> na América Latina (mercado nascente), correlação entre satisfação com MDD e SOW já é de R²=0,4079 — a mais alta entre as regiões. Sinal de que o consumidor brasileiro está mais propenso a concentrar compras onde MDD é boa.<br><br>
+    <span class="fonte-tag">P2 · Dado</span><strong>América do Sul = 2% de participação MDD</strong> vs Europa Ocidental 39%. Espaço enorme de crescimento.<br><br>
+    <span class="fonte-tag">P1 · Reposicionamento</span><strong>5 maneiras de maximizar MDD na lealdade:</strong> 1. Executive Sponsorship, 2. Alavanca de reposicionamento de marca do varejo, 3. Sortimento ideal para o consumidor, 4. Conexão com Programas de Fidelidade, 5. Inovação orientada ao cliente.<br><br>
+    <span class="fonte-tag">P2 · Dado</span><strong>Preço, Promoções e Sortimento</strong> respondem por 63% do impacto no resultado dos varejistas (35% + 28%). MDD aparece como sub-atributo de Sortimento e de Preço — duplica sua relevância.<br><br>
+    <span class="fonte-tag">P4 · Prova social</span><strong>Brasil:</strong> Sam's Club lidera em "eu amo a marca própria dessa loja" e em qualidade. Super BH lidera em economia. Pão de Açúcar e Líder no top 3. Dado pode ser usado contextualmente para demonstrar que MDD de qualidade ganha lealdade — sem citar rankings diretamente.<br><br>
+    <span class="fonte-tag">P3 · Solução</span><strong>Brazil Shopper Persona:</strong> 6 perfis mapeados — Buscador de valor, Fiel pragmático, Avesso a surpresas, Divisores de carrinho, Preço porteiro, Digital seletivo. Útil para posts sobre segmentação de portfólio.
+  </div>
+
+  <div class="month-t">Artigo Antônio Sá — Super Varejo Maio 2026</div>
+  <div class="fonte-card">
+    <div class="fonte-card-h" style="color:var(--mg)">Antônio Sá · "Estratégias de Marca Própria da Target e Walmart" · Super Varejo</div>
+    <p>Artigo de análise sobre MDD como driver estratégico de crescimento no varejo global, com lição para o Brasil.</p>
+    <br>
+    <span class="fonte-tag" style="background:#f8e4f0;color:var(--mg)">P1 · Reposicionamento</span><strong>Target elegeu MDD como um dos 3 drivers para voltar a crescer:</strong> US$1bi em marketing/tecnologia, modernização de lojas e investimento em marcas próprias (Threshold, Cloud Island). MDD não é alternativa — é alavanca estratégica.<br><br>
+    <span class="fonte-tag" style="background:#f8e4f0;color:var(--mg)">P2 · Dado</span><strong>Walmart Bettergoods:</strong> faturou US$500 milhões em 2024. 40% dos clientes voltaram a comprar. 70% dos produtos custam menos de US$5. MDD premium pode ser acessível e fidelizante ao mesmo tempo.<br><br>
+    <span class="fonte-tag" style="background:#f8e4f0;color:var(--mg)">P1 · Reposicionamento</span><strong>O que já sabemos que não funciona no Brasil:</strong> gestor comercial sozinho sem time dedicado, fornecedores por relacionamento sem critério técnico, apressar lançamentos sem estrutura, assumir que indústria garante qualidade, começar pelas categorias mais difíceis, acreditar que MDD precisa ser sempre a mais barata.<br><br>
+    <span class="fonte-tag" style="background:#f8e4f0;color:var(--mg)">P1 · Reposicionamento</span><strong>Frase do artigo (paráfrase):</strong> pior do que não ter marcas próprias é fazê-las mal feitas. A rede enfrenta problemas recorrentes — de falhas de fornecedores a reclamações de clientes. Para quem acerta, o ganho é competitividade, diferenciação, margens e fidelização.<br><br>
+    <span class="fonte-tag" style="background:#f8e4f0;color:var(--mg)">P3 · Solução</span><strong>Recomendação do artigo (paráfrase):</strong> aprenda com quem já faz bem-feito. Quais são as melhores empresas do Brasil nisso? Vá conversar com os principais executivos. A referência ao artigo do Sá pode ser usada para legitimar o discurso da Amicci sem citar diretamente.
+  </div>
+
+  <div class="month-t">Key Visual Amicci — Entrega 1</div>
+  <div class="fonte-card">
+    <div class="fonte-card-h" style="color:var(--te)">Key Visual Amicci · Slides 4–21 · Referência para briefs visuais</div>
+    <p>Material de identidade visual e conceitual da campanha. Usado como referência direta nos briefs para o designer.</p>
+    <br>
+    <span class="fonte-tag" style="background:var(--tcl);color:var(--te)">Slide 7</span><strong>Marca, Margem, Fidelidade:</strong> foto de varejo com sobreposição escura. Headline grande. Texto de contexto. Referência para posts P1 de impacto.<br><br>
+    <span class="fonte-tag" style="background:var(--tcl);color:var(--te)">Slide 8/9</span><strong>"Você tem o poder de criar o produto que seu cliente queria e não achava":</strong> layout split branco/azul bebê, foto com símbolo "a" recortado. Referência para posts P3.<br><br>
+    <span class="fonte-tag" style="background:var(--tcl);color:var(--te)">Slide 10</span><strong>"Não é falta de mercado. É falta de estrutura para executar":</strong> foto de corredor de supermercado com foto de produto artesanal. Referência para posts P1 de reposicionamento.<br><br>
+    <span class="fonte-tag" style="background:var(--tcl);color:var(--te)">Slide 11</span><strong>"Marca Própria feita simples":</strong> fundo escuro, foto de prateleiras, hexágonos com texto. Referência para posts P3.<br><br>
+    <span class="fonte-tag" style="background:var(--tcl);color:var(--te)">Slides 12–13</span><strong>Três portfólios (Nichados, Preço, Qualidade) com dados 33% e 35%:</strong> fundo escuro/claro alternado, produto render 3D, tira de fotos de categoria. Referência para posts P2 e P3.<br><br>
+    <span class="fonte-tag" style="background:var(--tcl);color:var(--te)">Slide 18</span><strong>"Conhece o cliente, mas não tem portfólio para retê-lo":</strong> foto de varejo/feira com painel branco sobreposto. "É estratégia." como assinatura. Referência para posts P1 Instagram.<br><br>
+    <span class="fonte-tag" style="background:var(--tcl);color:var(--te)">Slide 19</span><strong>"Marca própria não é produto barato" + foto lifestyle:</strong> fundo limpo, pessoa com painel superposto. Referência para posts P1 Instagram.<br><br>
+    <span class="fonte-tag" style="background:var(--tcl);color:var(--te)">Slide 21</span><strong>"Marca própria é transformar distribuição em margem":</strong> fundo escuro, perguntas em pílulas, comparativo método antigo vs Amicci. Referência para posts P3 LinkedIn.
+  </div>
+</div>
+<!-- ═══ JUNHO ═══ -->
+<div id="junho" class="section">
+  <div class="month-t">Junho 2026</div>
+  <div class="info"><strong>Contexto:</strong> Cortes do Johnny publicados até 17 jun (histórico). Lançamento Amicci Histórias em 18 jun com 3 vídeos no YouTube e primeiros cortes nos sociais. Semanas de 16–17 jun = aquecimento. Temperola entra na semana 23–27 jun. Posts institucionais de dados/reposicionamento preenchem os dias sem case.</div>
+
+  <div class="week">
+    <div class="week-h">Semana 1 · 10–13 jun — Institucional (início das publicações) <span>copy + brief completos</span></div>
+    <table class="ct"><thead><tr><th>Data</th><th>Dia</th><th>Canal</th><th>Tema</th><th>Tipo</th><th>Pauta</th><th>Status</th></tr></thead>
+    <tbody>
+
+      <!-- 10 jun LI -->
+      <tr>
+        <td class="td-inner"><span class="dc">10 jun</span></td>
+        <td class="td-inner"><span class="dy">Ter</span></td>
+        <td class="td-inner"><span class="bdg b-li">LinkedIn</span></td>
+        <td class="td-inner"><span class="cdot cl-inst"></span>Institucional · P1</td>
+        <td class="td-inner"><span class="tp tp-inst">Post longo</span></td>
+        <td>
+          <div class="td-inner">
+            <div class="pr">Marca própria não é rótulo</div>
+            <div class="sr">Gancho: perda de margem do varejo. Virada: existe saída estrutural.</div>
+            <div class="post-toggle" onclick="togglePost(this)"><span class="ti">›</span> Copy + Brief</div>
+          </div>
+          <div class="post-body">
+            <div class="pb-inner">
+              <div>
+                <div class="cb-label">Legenda LinkedIn</div>
+                <div class="cb-copy">O varejo perdeu margem nos últimos dois anos. A resposta do mercado foi promover mais, negociar mais agressivamente com fornecedores e cortar operação onde dava.
+
+Funciona. Até encontrar seu teto.
+
+Quando chega lá, o desgaste com parceiros-chave já foi feito, a estrutura de custo continua a mesma e o problema real permanece intocado.
+
+Existe uma saída que não depende de apertar mais ninguém: construir produto com identidade própria, com margem própria, com fidelidade que nenhuma marca de indústria consegue criar para o seu varejo.
+
+Não é falta de mercado. É falta de estrutura para executar.
+
+A Amicci executa tudo. Fale com um especialista.</div>
+                <div class="cb-cta"><strong>CTA</strong>Fale com um especialista. Link na bio.</div>
+                <div class="status-r">Rascunho</div>
+              </div>
+              <div>
+                <div class="cb-label">Brief para o designer</div>
+                <div class="cb-brief">
+                  <div class="cb-brief-title">BRIEF — 10 jun · LinkedIn · P1</div>
+                  <div class="bf"><span class="bfk">Formato</span><span class="bfv">Post único · 1200x628px</span></div>
+                  <div class="bf"><span class="bfk">Referência KV</span><span class="bfv">Slide 7 (Marca, Margem, Fidelidade) — foto de supermercado com sobreposição escura, headline grande</span></div>
+                  <div class="bf-div"></div>
+                  <div class="bf"><span class="bfk">Headline na arte</span><span class="bfv"><span class="bfhl">Não é falta de mercado. É falta de estrutura para executar.</span></span></div>
+                  <div class="bf"><span class="bfk">Texto de apoio</span><span class="bfv">A Amicci executa tudo.</span></div>
+                  <div class="bf-div"></div>
+                  <div class="bf"><span class="bfk">Fundo</span><span class="bfv">Escuro — foto de corredor de supermercado com overlay #002831 60–70%</span></div>
+                  <div class="bf"><span class="bfk">Tipografia</span><span class="bfv">Roboto Bold/Black · branco. Acento turquesa em palavra-chave ("executar" ou linha de apoio)</span></div>
+                  <div class="bf"><span class="bfk">Logo</span><span class="bfv">Amicci branco · canto inferior direito</span></div>
+                  <div class="bf"><span class="bfk">Obrigatório</span><span class="bfv">Turquesa em pelo menos um elemento tipográfico</span></div>
+                  <div class="bf"><span class="bfk">Obs</span><span class="bfv">Foto: corredor de supermercado brasileiro. Evitar banco genérico. Preferir acervo interno ou licenciado.</span></div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </td>
+        <td class="td-inner"><span class="status-r">Rascunho</span></td>
+      </tr>
+
+      <!-- 10 jun IG -->
+      <tr>
+        <td class="td-inner"><span class="dc">10 jun</span></td>
+        <td class="td-inner"><span class="dy">Ter</span></td>
+        <td class="td-inner"><span class="bdg b-ig">Instagram</span></td>
+        <td class="td-inner"><span class="cdot cl-inst"></span>Dados · P2</td>
+        <td class="td-inner"><span class="tp tp-inst">Post único</span></td>
+        <td>
+          <div class="td-inner">
+            <div class="pr">33% dos consumidores já optam por MDD para economizar</div>
+            <div class="sr">Big number. Fundo azul bebê. Fonte: Kantar.</div>
+            <div class="post-toggle" onclick="togglePost(this)"><span class="ti">›</span> Copy + Brief</div>
+          </div>
+          <div class="post-body">
+            <div class="pb-inner">
+              <div>
+                <div class="cb-label">Legenda Instagram</div>
+                <div class="cb-copy">33% dos consumidores brasileiros já optam por marcas próprias para economizar. Fonte: Kantar.
+
+O comportamento mudou. Marca própria passou a ser escolha ativa de quem sabe o que quer.
+
+Seu varejo está capturando essa preferência?
+
+Conheça a plataforma Amicci. Link na bio.
+
+#marcaprópria #privatelabel #varejo #dados</div>
+                <div class="cb-cta"><strong>CTA</strong>Conheça a plataforma Amicci. Link na bio.</div>
+                <div class="status-r">Rascunho</div>
+              </div>
+              <div>
+                <div class="cb-label">Brief para o designer</div>
+                <div class="cb-brief">
+                  <div class="cb-brief-title">BRIEF — 10 jun · Instagram · P2</div>
+                  <div class="bf"><span class="bfk">Formato</span><span class="bfv">Post único · 1080x1080px</span></div>
+                  <div class="bf"><span class="bfk">Referência KV</span><span class="bfv">Slide 13 — layout big number com fundo claro</span></div>
+                  <div class="bf-div"></div>
+                  <div class="bf"><span class="bfk">Headline na arte</span><span class="bfv"><span class="bfhl">33%</span> dos consumidores optam por marca própria para economizar.</div></div>
+                  <div class="bf"><span class="bfk">Texto de apoio</span><span class="bfv">Fonte: Kantar</span></div>
+                  <div class="bf-div"></div>
+                  <div class="bf"><span class="bfk">Fundo</span><span class="bfv">Claro — azul bebê #EAF9F8</span></div>
+                  <div class="bf"><span class="bfk">Tipografia</span><span class="bfv">Roboto Black. "33%" em turquesa #0FC2C0, tamanho grande (ocupa metade do espaço)</span></div>
+                  <div class="bf"><span class="bfk">Logo</span><span class="bfv">Amicci colorido (versão para fundo claro)</span></div>
+                  <div class="bf"><span class="bfk">Obs</span><span class="bfv">Fonte "Kantar" visível e legível no rodapé da arte</span></div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </td>
+        <td class="td-inner"><span class="status-r">Rascunho</span></td>
+      </tr>
+
+      <!-- 11 jun LI dunnhumby -->
+      <tr>
+        <td class="td-inner"><span class="dc">11 jun</span></td>
+        <td class="td-inner"><span class="dy">Qua</span></td>
+        <td class="td-inner"><span class="bdg b-li">LinkedIn</span></td>
+        <td class="td-inner"><span class="cdot cl-dunn"></span>dunnhumby · P2</td>
+        <td class="td-inner"><span class="tp tp-dado">Post longo</span></td>
+        <td>
+          <div class="td-inner">
+            <div class="pr">MDD de qualidade cresce 4x a 10x mais — e o varejo brasileiro está atrasado</div>
+            <div class="sr">Dado dunnhumby RPI 2026. Abertura pelo problema de participação de mercado no Brasil (2%) vs Europa (39%).</div>
+            <div class="post-toggle" onclick="togglePost(this)"><span class="ti">›</span> Copy + Brief</div>
+          </div>
+          <div class="post-body">
+            <div class="pb-inner">
+              <div>
+                <div class="cb-label">Legenda LinkedIn</div>
+                <div class="cb-copy">A América do Sul tem 2% de participação de mercado em marca própria. A Europa Ocidental tem 39%.
+
+Esse número não é só uma lacuna — é o mapa de uma oportunidade que o varejo brasileiro ainda está aprendendo a capturar.
+
+O Retail Preference Index da dunnhumby, com mais de 11 mil respondentes e 60 varejistas analisados no Brasil, mostra algo mais importante: varejistas com portfólios de marca própria de alta qualidade crescem de 4x a 10x mais rápido do que os demais. Não é correlação fraca. É dado robusto.
+
+O consumidor brasileiro já está com o share of wallet mais sensível à qualidade de marca própria do que qualquer outra região emergente. A janela para construir essa vantagem antes da concorrência está aberta.
+
+A Amicci executa tudo. Fale com um especialista.
+
+Fonte: dunnhumby RPI Brasil 2026 (APAS Show)</div>
+                <div class="cb-cta"><strong>CTA</strong>Fale com um especialista. Link na bio.</div>
+                <div class="status-r">Rascunho</div>
+              </div>
+              <div>
+                <div class="cb-label">Brief para o designer</div>
+                <div class="cb-brief">
+                  <div class="cb-brief-title">BRIEF — 11 jun · LinkedIn · dunnhumby P2</div>
+                  <div class="bf"><span class="bfk">Formato</span><span class="bfv">Post único · 1200x628px</span></div>
+                  <div class="bf-div"></div>
+                  <div class="bf"><span class="bfk">Conceito</span><span class="bfv">Arte de dado comparativo. Dois números em contraste visual: 2% (América do Sul) e 39% (Europa). Conceito de lacuna/oportunidade.</span></div>
+                  <div class="bf"><span class="bfk">Headline na arte</span><span class="bfv"><span class="bfhl">O varejo brasileiro tem 2% de participação em MDD. A Europa tem 39%. Isso é oportunidade.</span></span></div>
+                  <div class="bf"><span class="bfk">Texto de apoio</span><span class="bfv">Fonte: dunnhumby RPI Brasil 2026</span></div>
+                  <div class="bf-div"></div>
+                  <div class="bf"><span class="bfk">Fundo</span><span class="bfv">Escuro — #002831 com gradiente sutil</span></div>
+                  <div class="bf"><span class="bfk">Tipografia</span><span class="bfv">Roboto Black. "2%" em branco pequeno, "39%" em turquesa grande — contraste visual intencional</span></div>
+                  <div class="bf"><span class="bfk">Logo</span><span class="bfv">Amicci branco · canto inferior direito</span></div>
+                  <div class="bf"><span class="bfk">Obrigatório</span><span class="bfv">Fonte da pesquisa visível. Sem gráficos decorativos sem embasamento.</span></div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </td>
+        <td class="td-inner"><span class="status-r">Rascunho</span></td>
+      </tr>
+
+      <!-- 12 jun IG -->
+      <tr>
+        <td class="td-inner"><span class="dc">12 jun</span></td>
+        <td class="td-inner"><span class="dy">Qui</span></td>
+        <td class="td-inner"><span class="bdg b-ig">Instagram</span></td>
+        <td class="td-inner"><span class="cdot cl-inst"></span>Institucional · P1</td>
+        <td class="td-inner"><span class="tp tp-inst">Post único</span></td>
+        <td>
+          <div class="td-inner">
+            <div class="pr">Conhece o cliente, mas não tem portfólio para retê-lo</div>
+            <div class="sr">Arte Key Visual slide 18. "É estratégia." como assinatura.</div>
+            <div class="post-toggle" onclick="togglePost(this)"><span class="ti">›</span> Copy + Brief</div>
+          </div>
+          <div class="post-body">
+            <div class="pb-inner">
+              <div>
+                <div class="cb-label">Legenda Instagram</div>
+                <div class="cb-copy">Conhecer o cliente e não ter o produto certo para ele é o problema mais caro do varejo.
+
+Com portfólio de marca própria, a fidelidade deixa de depender de preço e passa a depender de algo que só você pode oferecer.
+
+É estratégia. A Amicci executa.
+
+Conheça a plataforma. Link na bio.
+
+#marcaprópria #varejo #privatelabel #estratégia</div>
+                <div class="cb-cta"><strong>CTA</strong>Conheça a plataforma. Link na bio.</div>
+                <div class="status-r">Rascunho</div>
+              </div>
+              <div>
+                <div class="cb-label">Brief para o designer</div>
+                <div class="cb-brief">
+                  <div class="cb-brief-title">BRIEF — 12 jun · Instagram · P1</div>
+                  <div class="bf"><span class="bfk">Formato</span><span class="bfv">Post único · 1080x1080px</span></div>
+                  <div class="bf"><span class="bfk">Referência KV</span><span class="bfv">Slide 18 — foto de varejo/feira desfocada ao fundo, painel branco sobreposto com headline bold escuro</span></div>
+                  <div class="bf-div"></div>
+                  <div class="bf"><span class="bfk">Headline na arte</span><span class="bfv"><span class="bfhl">Conhece o cliente, mas não tem portfólio para retê-lo.</span></span></div>
+                  <div class="bf"><span class="bfk">Assinatura</span><span class="bfv">É estratégia. [Logo Amicci]</span></div>
+                  <div class="bf-div"></div>
+                  <div class="bf"><span class="bfk">Fundo</span><span class="bfv">Foto real de varejo (feira, mercado, prateleira) desfocada ao fundo</span></div>
+                  <div class="bf"><span class="bfk">Painel</span><span class="bfv">Painel branco quadrado sobreposto centralizado. Headline em Roboto Bold escuro (#212323)</span></div>
+                  <div class="bf"><span class="bfk">Assinatura</span><span class="bfv">"É estratégia." em turquesa ou chumbo escuro. Logo Amicci colorido ao lado.</span></div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </td>
+        <td class="td-inner"><span class="status-r">Rascunho</span></td>
+      </tr>
+
+      <!-- 12 jun LI Wake -->
+      <tr>
+        <td class="td-inner"><span class="dc">12 jun</span></td>
+        <td class="td-inner"><span class="dy">Qui</span></td>
+        <td class="td-inner"><span class="bdg b-wake">Wake · LI</span></td>
+        <td class="td-inner"><span class="cdot cl-inst"></span>Institucional · P3</td>
+        <td class="td-inner"><span class="tp tp-wake">Carrossel estático</span></td>
+        <td>
+          <div class="td-inner">
+            <div class="pr">Da ideia ao produto na gôndola — como a Amicci executa</div>
+            <div class="sr">6 slides. Cada slide = uma etapa do processo. Formato Wake Commerce.</div>
+            <div class="post-toggle" onclick="togglePost(this)"><span class="ti">›</span> Copy + Brief</div>
+          </div>
+          <div class="post-body">
+            <div class="pb-inner">
+              <div>
+                <div class="cb-label">Legenda LinkedIn (carrossel)</div>
+                <div class="cb-copy">A maioria dos varejistas conhece a oportunidade de marca própria. O que para é a execução.
+
+Esse é o processo que a Amicci estrutura de ponta a ponta. [Deslize para ver →]
+
+Fale com um especialista. Link na bio.</div>
+                <div class="cb-label" style="margin-top:10px">Roteiro dos slides</div>
+                <div class="cb-copy">Slide 1 (capa): Da ideia ao produto na gôndola. A Amicci executa tudo.
+
+Slide 2: Identificação de oportunidade. Qual produto, qual categoria, qual consumidor. A Amicci analisa dados de mercado e perfil do seu shopper para mapear onde marca própria faz sentido.
+
+Slide 3: Sourcing qualificado. Mais de 2.300 indústrias certificadas. A Amicci conecta você ao fornecedor certo para o produto certo — com critério técnico, não por relacionamento.
+
+Slide 4: Desenvolvimento de produto e embalagem. Da especificação técnica ao direcional criativo, com a Amy (ferramenta de IA da Amicci) acelerando o processo de briefing.
+
+Slide 5: Gestão de qualidade. Cada etapa auditada. Cada lote rastreado. Sem surpresa na gôndola.
+
+Slide 6 (CTA): Acompanhamento de performance. Visibilidade de vendas, giro e margens em tempo real. Mais receita, menos custo. A Amicci executa tudo. → Fale com um especialista.</div>
+                <div class="cb-cta"><strong>CTA</strong>Fale com um especialista. Link na bio.</div>
+                <div class="status-r">Rascunho</div>
+              </div>
+              <div>
+                <div class="cb-label">Brief para o designer</div>
+                <div class="cb-brief">
+                  <div class="cb-brief-title">BRIEF — 12 jun · LinkedIn · Carrossel Wake · P3</div>
+                  <div class="bf"><span class="bfk">Formato</span><span class="bfv">Carrossel 6 slides · 1080x1080px cada</span></div>
+                  <div class="bf"><span class="bfk">Estilo</span><span class="bfv">Wake Commerce: tipografia grande, dado/etapa em destaque, ícone minimalista por slide, fundo escuro alternando com slide de CTA turquesa</span></div>
+                  <div class="bf-div"></div>
+                  <div class="bf"><span class="bfk">Slide 1 (capa)</span><span class="bfv">Fundo escuro #002831. Headline bold branco. Símbolo "a" Amicci ao fundo em baixa opacidade.</span></div>
+                  <div class="bf"><span class="bfk">Slides 2–5</span><span class="bfv">Fundo escuro. Número do passo em turquesa grande (1, 2, 3, 4). Nome da etapa em Roboto Bold branco. Descrição em Roboto Regular branco 60% opacidade. Ícone minimalista.</span></div>
+                  <div class="bf"><span class="bfk">Slide 6 (CTA)</span><span class="bfv">Fundo turquesa #016071. "Mais receita, menos custo → A Amicci executa tudo." em branco. Logo Amicci branco.</span></div>
+                  <div class="bf"><span class="bfk">Numeração</span><span class="bfv">Visível em todos os frames (1/6, 2/6...)</span></div>
+                  <div class="bf"><span class="bfk">Obrigatório</span><span class="bfv">Turquesa em todos os slides. Logo Amicci em cada frame.</span></div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </td>
+        <td class="td-inner"><span class="status-r">Rascunho</span></td>
+      </tr>
+
+      <!-- 13 jun IG Copa -->
+      <tr>
+        <td class="td-inner"><span class="dc">13 jun</span></td>
+        <td class="td-inner"><span class="dy">Sex</span></td>
+        <td class="td-inner"><span class="bdg b-li">LinkedIn</span></td>
+        <td class="td-inner"><span class="cdot cl-sa"></span>Artigo Sá · P1</td>
+        <td class="td-inner"><span class="tp tp-inst">Post longo</span></td>
+        <td>
+          <div class="td-inner">
+            <div class="pr">Target + Walmart: quando o varejo de excelência coloca MDD no centro da estratégia</div>
+            <div class="sr">Referência artigo Antônio Sá. MDD como driver de crescimento, não de custo. Tom analítico e propositivo.</div>
+            <div class="post-toggle" onclick="togglePost(this)"><span class="ti">›</span> Copy + Brief</div>
+          </div>
+          <div class="post-body">
+            <div class="pb-inner">
+              <div>
+                <div class="cb-label">Legenda LinkedIn</div>
+                <div class="cb-copy">Quando a Target precisou voltar a crescer, elegeu três drivers estratégicos. Marca própria foi um deles.
+
+A Walmart lançou a Bettergoods, que faturou US$500 milhões em 2024. 40% dos clientes voltaram a comprar. 70% dos produtos custam menos de US$5.
+
+Esses dois casos mostram a mesma lógica: para o varejo de excelência global, marca própria não é alternativa — é posicionamento. E posicionamento precisa de execução para existir.
+
+O Brasil está atrasado nessa curva. 2% de participação de MDD no mercado, contra 39% na Europa. Mas esse atraso é reversível — e o varejo que estruturar a execução agora vai ter uma vantagem competitiva real nos próximos ciclos.
+
+A Amicci executa tudo. Fale com um especialista.</div>
+                <div class="cb-cta"><strong>CTA</strong>Fale com um especialista. Link na bio.</div>
+                <div class="status-r">Rascunho</div>
+              </div>
+              <div>
+                <div class="cb-label">Brief para o designer</div>
+                <div class="cb-brief">
+                  <div class="cb-brief-title">BRIEF — 13 jun · LinkedIn · Artigo Sá P1</div>
+                  <div class="bf"><span class="bfk">Formato</span><span class="bfv">Post único · 1200x628px</span></div>
+                  <div class="bf-div"></div>
+                  <div class="bf"><span class="bfk">Conceito</span><span class="bfv">Arte de dado global comparativo. Referência visual ao varejo americano de excelência sem usar logos de marca (Target, Walmart).</span></div>
+                  <div class="bf"><span class="bfk">Headline na arte</span><span class="bfv"><span class="bfhl">Para o varejo de excelência global, marca própria não é alternativa. É posicionamento.</span></span></div>
+                  <div class="bf"><span class="bfk">Texto de apoio</span><span class="bfv">Bettergoods: US$500 milhões no primeiro ano.</span></div>
+                  <div class="bf-div"></div>
+                  <div class="bf"><span class="bfk">Fundo</span><span class="bfv">Escuro (#002831). Foto de interior de supermercado moderno ao fundo com overlay.</span></div>
+                  <div class="bf"><span class="bfk">Tipografia</span><span class="bfv">Roboto Bold branco. Dado monetário em turquesa.</span></div>
+                  <div class="bf"><span class="bfk">Obs</span><span class="bfv">Não incluir logos de Target ou Walmart. Apenas referência textual na legenda.</span></div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </td>
+        <td class="td-inner"><span class="status-r">Rascunho</span></td>
+      </tr>
+
+    </tbody></table>
+  </div>
+
+  <!-- SEMANA AQUECIMENTO -->
+  <div class="week">
+    <div class="week-h">Semana 2 · 15–17 jun — Aquecimento para lançamento <span>domingo + segunda + terça</span></div>
+    <table class="ct"><thead><tr><th>Data</th><th>Dia</th><th>Canal</th><th>Tema</th><th>Tipo</th><th>Pauta</th><th>Status</th></tr></thead>
+    <tbody>
+
+      <!-- 15 jun IG aquecimento -->
+      <tr>
+        <td class="td-inner"><span class="dc">15 jun</span></td>
+        <td class="td-inner"><span class="dy">Dom</span></td>
+        <td class="td-inner"><span class="bdg b-ig">Instagram</span></td>
+        <td class="td-inner"><span class="cdot cl-inst"></span>Aquecimento</td>
+        <td class="td-inner"><span class="tp tp-inst">Post + Stories</span></td>
+        <td>
+          <div class="td-inner">
+            <div class="pr">"Amicci Histórias. Em breve."</div>
+            <div class="sr">Primeiro sinal público do lançamento. Texto mínimo. Stories com caixa de perguntas.</div>
+            <div class="post-toggle" onclick="togglePost(this)"><span class="ti">›</span> Copy + Brief</div>
+          </div>
+          <div class="post-body">
+            <div class="pb-inner">
+              <div>
+                <div class="cb-label">Legenda Instagram</div>
+                <div class="cb-copy">Na quarta-feira, a gente conta uma história.
+
+Na verdade, mais de uma.
+
+Amicci Histórias. Em breve.
+
+#amiccihistórias #marcaprópria #amicci</div>
+                <div class="cb-label" style="margin-top:10px">Stories</div>
+                <div class="cb-copy">Frame 1: "Amicci Histórias." [caixa de perguntas] "O que você espera ver?"
+Frame 2: "Quarta-feira."</div>
+                <div class="status-r">Rascunho</div>
+              </div>
+              <div>
+                <div class="cb-label">Brief para o designer</div>
+                <div class="cb-brief">
+                  <div class="cb-brief-title">BRIEF — 15 jun · Instagram · Aquecimento</div>
+                  <div class="bf"><span class="bfk">Formato</span><span class="bfv">Feed: 1080x1080px · Stories: 1080x1920px</span></div>
+                  <div class="bf-div"></div>
+                  <div class="bf"><span class="bfk">Conceito feed</span><span class="bfv">Fundo escuro #002831. Símbolo "a" da Amicci ao fundo em opacidade 10–12%. Headline mínimo centralizado. Tom de mistério controlado.</span></div>
+                  <div class="bf"><span class="bfk">Headline feed</span><span class="bfv"><span class="bfhl">Amicci Histórias.</span></span></div>
+                  <div class="bf"><span class="bfk">Texto de apoio</span><span class="bfv">Em breve.</span></div>
+                  <div class="bf"><span class="bfk">Estilo feed</span><span class="bfv">Tipografia enorme, Bold, branca. Turquesa em acento mínimo (linha ou ponto). Sem excesso de elementos.</span></div>
+                  <div class="bf"><span class="bfk">Stories</span><span class="bfv">Versão animada se possível (fade do texto). Caixa de perguntas nativa do Instagram. Frame 2 com countdown para quarta.</span></div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </td>
+        <td class="td-inner"><span class="status-r">Rascunho</span></td>
+      </tr>
+
+      <!-- 16 jun YT uploads -->
+      <tr>
+        <td class="td-inner"><span class="dc">16 jun</span></td>
+        <td class="td-inner"><span class="dy">Seg</span></td>
+        <td class="td-inner"><span class="bdg b-yt">YouTube</span></td>
+        <td class="td-inner"><span class="cdot cl-cotton"></span><span class="cdot cl-carrefour"></span><span class="cdot cl-sumire"></span>3 cases</td>
+        <td class="td-inner"><span class="tp tp-case">Upload completo</span></td>
+        <td>
+          <div class="td-inner">
+            <div class="pr">Upload: Cottonbaby + Carrefour + Sumirê</div>
+            <div class="sr">Subir os 3 vídeos completos para indexação antes dos cortes irem ao ar.</div>
+            <div class="post-toggle" onclick="togglePost(this)"><span class="ti">›</span> Títulos + Descrições YT</div>
+          </div>
+          <div class="post-body">
+            <div class="pb-full">
+              <div class="cb-label">Títulos e descrições YouTube</div>
+              <div class="cb-copy">COTTONBABY
+Título: Como a Cottonbaby opera marcas próprias com a precisão de um relógio — case Amicci
+Descrição: Amicci Histórias: como a Cottonbaby estruturou sua operação de marca própria com a Amicci e a Indux. Da decisão estratégica ao produto na gôndola. Conheça a plataforma: www.amicci.com.br
+
+CARREFOUR
+Título: 21% das vendas do Carrefour vêm de marcas próprias desenvolvidas com a Amicci
+Descrição: Amicci Histórias: como o Carrefour e a Amicci construíram uma operação de marca própria com escala, método e governança. Conheça a plataforma: www.amicci.com.br
+
+SUMIRÊ
+Título: Como a Sumirê desenvolveu mais de 500 produtos de marca própria com a Amicci
+Descrição: Amicci Histórias: a jornada da Sumirê com a Amicci — de novos produtos a categorias estratégicas como coloração. Fidelização e faturamento em resultado. Conheça a plataforma: www.amicci.com.br</div>
+              <div class="nota">Subir todos os 3 no dia 16 (manhã e tarde) para garantir indexação antes dos cortes sociais em 17 jun. Legendar todos os vídeos — impacta SEO e acessibilidade.</div>
+              <div class="status-r">Rascunho</div>
+            </div>
+          </div>
+        </td>
+        <td class="td-inner"><span class="status-r">Rascunho</span></td>
+      </tr>
+
+      <!-- 16 jun LI carrefour dado -->
+      <tr>
+        <td class="td-inner"><span class="dc">16 jun</span></td>
+        <td class="td-inner"><span class="dy">Seg</span></td>
+        <td class="td-inner"><span class="bdg b-li">LinkedIn</span></td>
+        <td class="td-inner"><span class="cdot cl-carrefour"></span>Carrefour · P4 dados</td>
+        <td class="td-inner"><span class="tp tp-case">Corte · dados</span></td>
+        <td>
+          <div class="td-inner">
+            <div class="pr">Carrefour: 21% das vendas vêm de MDD desenvolvida com a Amicci</div>
+            <div class="sr">Dado de escala e resultado. Tom executivo. Antecede E-mail 3 em 2 dias.</div>
+            <div class="post-toggle" onclick="togglePost(this)"><span class="ti">›</span> Copy + Brief</div>
+          </div>
+          <div class="post-body">
+            <div class="pb-inner">
+              <div>
+                <div class="cb-label">Legenda LinkedIn</div>
+                <div class="cb-copy">21% das vendas do Carrefour vêm de produtos de marca própria desenvolvidos em parceria com a Amicci.
+
+Esse número representa escala, mas representa também algo mais difícil de construir: consistência. Uma operação que funciona em múltiplas categorias, com padrão de qualidade, com controle de processo e com visibilidade de ponta a ponta.
+
+A parceria com a Amicci não começou grande. Começou com método.
+
+Amicci Histórias — Carrefour. Assista ao case completo no YouTube. Link na bio.
+
+#amiccihistórias #marcaprópria #varejo</div>
+                <div class="cb-cta"><strong>CTA</strong>Assista ao case completo. Link na bio.</div>
+                <div class="status-r">Rascunho</div>
+              </div>
+              <div>
+                <div class="cb-label">Brief para o designer</div>
+                <div class="cb-brief">
+                  <div class="cb-brief-title">BRIEF — 16 jun · LinkedIn · Carrefour Corte dados</div>
+                  <div class="bf"><span class="bfk">Formato</span><span class="bfv">Thumbnail de vídeo · 1200x628px</span></div>
+                  <div class="bf"><span class="bfk">Conceito</span><span class="bfv">Thumbnail do corte com frame da entrevista Carrefour. Headline com dado 21% em destaque. Tom executivo e factual.</span></div>
+                  <div class="bf"><span class="bfk">Headline na arte</span><span class="bfv"><span class="bfhl">21% das vendas. O que essa parceria construiu.</span></span></div>
+                  <div class="bf"><span class="bfk">Tag</span><span class="bfv">Amicci Histórias — Carrefour</span></div>
+                  <div class="bf-div"></div>
+                  <div class="bf"><span class="bfk">Fundo</span><span class="bfv">Frame do vídeo Carrefour com overlay escuro. Turquesa em acento tipográfico.</span></div>
+                  <div class="bf"><span class="bfk">Logos</span><span class="bfv">Amicci branco. Logo Carrefour (confirmar aprovação de uso com equipe antes de produzir).</span></div>
+                  <div class="bf"><span class="bfk">Obs</span><span class="bfv">Confirmar uso de imagens e logo Carrefour com equipe jurídica/commercial antes da publicação.</span></div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </td>
+        <td class="td-inner"><span class="status-r">Rascunho</span></td>
+      </tr>
+
+      <!-- 17 jun IG Sumire emocional -->
+      <tr>
+        <td class="td-inner"><span class="dc">17 jun</span></td>
+        <td class="td-inner"><span class="dy">Ter</span></td>
+        <td class="td-inner"><span class="bdg b-ig">Instagram</span></td>
+        <td class="td-inner"><span class="cdot cl-sumire"></span>Sumirê · P4 emocional</td>
+        <td class="td-inner"><span class="tp tp-case">Corte · emocional</span></td>
+        <td>
+          <div class="td-inner">
+            <div class="pr">Novidades mastigáveis — a história por trás de 500 produtos</div>
+            <div class="sr">Tom emocional. Narrativa de conquista produto a produto.</div>
+            <div class="post-toggle" onclick="togglePost(this)"><span class="ti">›</span> Copy + Brief</div>
+          </div>
+          <div class="post-body">
+            <div class="pb-inner">
+              <div>
+                <div class="cb-label">Legenda Instagram</div>
+                <div class="cb-copy">A Sumirê não lançou 500 produtos de uma vez. Lançou um. Depois outro. Depois mais.
+
+É assim que uma operação de marca própria se constrói — com método, com aprendizado e com uma plataforma que garante que cada lançamento seja melhor que o anterior.
+
+Amicci Histórias — Sumirê. Assista no YouTube. Link na bio.
+
+#amiccihistórias #sumirê #marcaprópria #amicci</div>
+                <div class="cb-cta"><strong>CTA</strong>Assista no YouTube. Link na bio.</div>
+                <div class="status-r">Rascunho</div>
+              </div>
+              <div>
+                <div class="cb-label">Brief para o designer</div>
+                <div class="cb-brief">
+                  <div class="cb-brief-title">BRIEF — 17 jun · Instagram · Sumirê emocional</div>
+                  <div class="bf"><span class="bfk">Formato</span><span class="bfv">Thumbnail de vídeo · 1080x1080px</span></div>
+                  <div class="bf"><span class="bfk">Conceito</span><span class="bfv">Frame emocional do vídeo — entrevistado em cena natural, expressão genuína. Painel com headline sobreposto. Tom de conquista humana.</span></div>
+                  <div class="bf"><span class="bfk">Headline na arte</span><span class="bfv"><span class="bfhl">Uma história de 500 produtos. Começa com um.</span></span></div>
+                  <div class="bf"><span class="bfk">Tag</span><span class="bfv">Amicci Histórias — Sumirê</span></div>
+                  <div class="bf-div"></div>
+                  <div class="bf"><span class="bfk">Fundo</span><span class="bfv">Frame do entrevistado com leve overlay escuro. Painel de headline em tipografia bold branca.</span></div>
+                  <div class="bf"><span class="bfk">Turquesa</span><span class="bfv">Acento mínimo — linha horizontal ou ponto de cor. Logo Amicci branco.</span></div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </td>
+        <td class="td-inner"><span class="status-r">Rascunho</span></td>
+      </tr>
+
+      <!-- 17 jun IG countdown -->
+      <tr>
+        <td class="td-inner"><span class="dc">17 jun</span></td>
+        <td class="td-inner"><span class="dy">Ter</span></td>
+        <td class="td-inner"><span class="bdg b-ig">Instagram</span></td>
+        <td class="td-inner"><span class="cdot cl-inst"></span>Aquecimento final</td>
+        <td class="td-inner"><span class="tp tp-inst">Post + Stories</span></td>
+        <td>
+          <div class="td-inner">
+            <div class="pr">"Amanhã." — fechamento do aquecimento</div>
+            <div class="sr">Contagem regressiva. Stories com countdown nativo (notificação push para seguidores).</div>
+            <div class="post-toggle" onclick="togglePost(this)"><span class="ti">›</span> Copy + Brief</div>
+          </div>
+          <div class="post-body">
+            <div class="pb-inner">
+              <div>
+                <div class="cb-label">Legenda Instagram</div>
+                <div class="cb-copy">Amanhã a gente lança Amicci Histórias.
+
+Histórias reais de varejistas que transformaram marca própria em estratégia.
+
+Fica de olho.
+
+#amiccihistórias #marcaprópria #amicci</div>
+                <div class="cb-label" style="margin-top:10px">Stories</div>
+                <div class="cb-copy">Countdown nativo do Instagram apontando para quarta-feira 18 jun.
+Link para o canal do YouTube na bio do Stories.</div>
+                <div class="status-r">Rascunho</div>
+              </div>
+              <div>
+                <div class="cb-label">Brief para o designer</div>
+                <div class="cb-brief">
+                  <div class="cb-brief-title">BRIEF — 17 jun · Instagram · Countdown</div>
+                  <div class="bf"><span class="bfk">Formato</span><span class="bfv">Feed: 1080x1080px · Stories: 1080x1920px</span></div>
+                  <div class="bf-div"></div>
+                  <div class="bf"><span class="bfk">Headline feed</span><span class="bfv"><span class="bfhl">Amanhã.</span></span></div>
+                  <div class="bf"><span class="bfk">Texto feed</span><span class="bfv">Amicci Histórias. Histórias reais de quem fez.</span></div>
+                  <div class="bf"><span class="bfk">Conceito feed</span><span class="bfv">Tipografia enorme, bold, branca. "Amanhã." como único elemento central. Fundo escuro #002831. Símbolo Amicci ao fundo opacidade 10%.</span></div>
+                  <div class="bf"><span class="bfk">Stories</span><span class="bfv">Countdown nativo Instagram. Fundo escuro. Turquesa como cor de destaque. Link para YouTube.</span></div>
+                  <div class="bf"><span class="bfk">Obs</span><span class="bfv">O countdown do Stories gera notificação push automática para seguidores — ativar obrigatoriamente.</span></div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </td>
+        <td class="td-inner"><span class="status-r">Rascunho</span></td>
+      </tr>
+
+    </tbody></table>
+  </div>
+
+  <!-- SEMANA LANÇAMENTO -->
+  <div class="week">
+    <div class="week-h">Semana 3 · 18–20 jun — Lançamento Amicci Histórias <span>E-mail Varejo 3 + Indústria 3 em 18 jun</span></div>
+    <table class="ct"><thead><tr><th>Data</th><th>Dia</th><th>Canal</th><th>Tema</th><th>Tipo</th><th>Pauta</th><th>Status</th></tr></thead>
+    <tbody>
+
+      <tr>
+        <td class="td-inner"><span class="dc">18 jun</span></td>
+        <td class="td-inner"><span class="dy">Qua</span></td>
+        <td class="td-inner"><span class="bdg b-em">E-mail</span></td>
+        <td class="td-inner"><span class="cdot cl-inst"></span>Varejo + Indústria</td>
+        <td class="td-inner"><span class="tp tp-inst">Disparo duplo</span></td>
+        <td><div class="td-inner"><div class="pr">Disparo E-mail V3 (Varejo) + E-mail I3 (Indústria)</div><div class="em-anchor">E-mail V3 · Varejo</div> <div class="em-anchor">E-mail I3 · Indústria</div><div class="nota" style="margin-top:5px">Ver aba E-mail · Varejo e E-mail · Indústria para textos completos.</div></div></td>
+        <td class="td-inner"><span class="status-r">Rascunho</span></td>
+      </tr>
+
+      <tr>
+        <td class="td-inner"><span class="dc">19 jun</span></td>
+        <td class="td-inner"><span class="dy">Qui</span></td>
+        <td class="td-inner"><span class="bdg b-li">LinkedIn</span></td>
+        <td class="td-inner"><span class="cdot cl-cotton"></span>Cottonbaby · dados</td>
+        <td class="td-inner"><span class="tp tp-case">Corte · dados</span></td>
+        <td>
+          <div class="td-inner">
+            <div class="pr">Cottonbaby — Amicci atua como um relógio: precisão na operação de MDD</div>
+            <div class="sr">Eficiência operacional, timing e precisão. Tom técnico e executivo.</div>
+            <div class="post-toggle" onclick="togglePost(this)"><span class="ti">›</span> Copy + Brief</div>
+          </div>
+          <div class="post-body">
+            <div class="pb-inner">
+              <div>
+                <div class="cb-label">Legenda LinkedIn</div>
+                <div class="cb-copy">No desenvolvimento de marca própria, o que mais mata uma boa estratégia é a execução fora do prazo.
+
+A Cottonbaby encontrou na Amicci uma plataforma que opera com a precisão que o negócio exige. Cada etapa do projeto no tempo certo. Cada entregável rastreado. Cada fornecedor avaliado e certificado.
+
+O resultado não é só produto na gôndola. É uma operação de marca própria que o varejista consegue crescer com confiança.
+
+Amicci Histórias — Cottonbaby. Assista ao case completo no YouTube. Link na bio.
+
+#amiccihistórias #cottonbaby #marcaprópria</div>
+                <div class="cb-cta"><strong>CTA</strong>Assista ao case completo. Link na bio.</div>
+                <div class="status-r">Rascunho</div>
+              </div>
+              <div>
+                <div class="cb-label">Brief para o designer</div>
+                <div class="cb-brief">
+                  <div class="cb-brief-title">BRIEF — 19 jun · LinkedIn · Cottonbaby dados</div>
+                  <div class="bf"><span class="bfk">Formato</span><span class="bfv">Thumbnail de vídeo · 1200x628px</span></div>
+                  <div class="bf"><span class="bfk">Conceito</span><span class="bfv">Frame da entrevista Cottonbaby. Headline com metáfora de precisão/relógio. Tom executivo.</span></div>
+                  <div class="bf"><span class="bfk">Headline na arte</span><span class="bfv"><span class="bfhl">"A Amicci atua como um relógio."</span></span></div>
+                  <div class="bf"><span class="bfk">Tag</span><span class="bfv">Amicci Histórias — Cottonbaby</span></div>
+                  <div class="bf-div"></div>
+                  <div class="bf"><span class="bfk">Fundo</span><span class="bfv">Frame do entrevistado com overlay escuro. Turquesa em acento tipográfico. Logo Amicci branco.</span></div>
+                  <div class="bf"><span class="bfk">Obs</span><span class="bfv">Usar aspas na headline — é citação. Confirmar uso de imagens da Cottonbaby com equipe.</span></div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </td>
+        <td class="td-inner"><span class="status-r">Rascunho</span></td>
+      </tr>
+
+      <tr>
+        <td class="td-inner"><span class="dc">19 jun</span></td>
+        <td class="td-inner"><span class="dy">Qui</span></td>
+        <td class="td-inner"><span class="bdg b-ig">Instagram</span></td>
+        <td class="td-inner"><span class="cdot cl-carrefour"></span>Carrefour · emocional</td>
+        <td class="td-inner"><span class="tp tp-case">Corte · emocional</span></td>
+        <td>
+          <div class="td-inner">
+            <div class="pr">Sinergia Amicci, Carrefour e bons fornecedores</div>
+            <div class="sr">O que acontece quando varejo, plataforma e indústria trabalham alinhados. Tom relacional.</div>
+            <div class="post-toggle" onclick="togglePost(this)"><span class="ti">›</span> Copy + Brief</div>
+          </div>
+          <div class="post-body">
+            <div class="pb-inner">
+              <div>
+                <div class="cb-label">Legenda Instagram</div>
+                <div class="cb-copy">Marca própria de qualidade não depende só de um bom produto. Depende de todo o elo da cadeia estar alinhado: o varejista que sabe o que quer, a plataforma que estrutura a execução e a indústria que entrega com o padrão certo.
+
+Foi essa sinergia que construiu o portfólio de marcas próprias do Carrefour com a Amicci.
+
+Amicci Histórias — Carrefour. Assista no YouTube. Link na bio.
+
+#amiccihistórias #carrefour #marcaprópria</div>
+                <div class="cb-cta"><strong>CTA</strong>Assista no YouTube. Link na bio.</div>
+                <div class="status-r">Rascunho</div>
+              </div>
+              <div>
+                <div class="cb-label">Brief para o designer</div>
+                <div class="cb-brief">
+                  <div class="cb-brief-title">BRIEF — 19 jun · Instagram · Carrefour emocional</div>
+                  <div class="bf"><span class="bfk">Formato</span><span class="bfv">Thumbnail de vídeo · 1080x1080px</span></div>
+                  <div class="bf"><span class="bfk">Conceito</span><span class="bfv">Frame relacional do vídeo — dois ou mais interlocutores, sensação de parceria genuína. Tom humano e caloroso.</span></div>
+                  <div class="bf"><span class="bfk">Headline na arte</span><span class="bfv"><span class="bfhl">Varejista. Plataforma. Indústria. Quando os três estão alinhados.</span></span></div>
+                  <div class="bf"><span class="bfk">Tag</span><span class="bfv">Amicci Histórias — Carrefour</span></div>
+                  <div class="bf"><span class="bfk">Fundo</span><span class="bfv">Frame do vídeo com overlay suave. Logo Amicci branco.</span></div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </td>
+        <td class="td-inner"><span class="status-r">Rascunho</span></td>
+      </tr>
+
+      <tr>
+        <td class="td-inner"><span class="dc">19 jun</span></td>
+        <td class="td-inner"><span class="dy">Qui</span></td>
+        <td class="td-inner"><span class="bdg b-wake">Wake · LI+IG</span></td>
+        <td class="td-inner"><span class="cdot cl-cotton"></span>Cottonbaby estático</td>
+        <td class="td-inner"><span class="tp tp-wake">Post estático</span></td>
+        <td><div class="td-inner"><div class="pr">Estático: "Fizemos a coisa certa" — decisão estratégica + Indux</div><div class="sr">Formato Wake: citação do cliente + contexto de resultado. Compartilhável.</div><span class="status-r">Rascunho</span></div></td>
+        <td class="td-inner"><span class="status-r">Rascunho</span></td>
+      </tr>
+
+      <tr>
+        <td class="td-inner"><span class="dc">20 jun</span></td>
+        <td class="td-inner"><span class="dy">Sex</span></td>
+        <td class="td-inner"><span class="bdg b-li">LinkedIn</span></td>
+        <td class="td-inner"><span class="cdot cl-sumire"></span>Sumirê · dados</td>
+        <td class="td-inner"><span class="tp tp-case">Corte · dados</span></td>
+        <td>
+          <div class="td-inner">
+            <div class="pr">Sumirê — coloração: como uma categoria virou alavanca de margem</div>
+            <div class="sr">Dado de performance por categoria. Método Amicci aplicado a uma categoria específica.</div>
+            <div class="post-toggle" onclick="togglePost(this)"><span class="ti">›</span> Copy + Brief</div>
+          </div>
+          <div class="post-body">
+            <div class="pb-inner">
+              <div>
+                <div class="cb-label">Legenda LinkedIn</div>
+                <div class="cb-copy">Coloração é uma categoria com alto valor percebido, consumidora fiel e margem que a maioria dos varejos deixava inteiramente para a indústria.
+
+A Sumirê entrou nessa categoria com marca própria. Com produto pensado para o seu consumidor, com identidade e com governança de qualidade em cada SKU. O resultado está na fidelização — e no faturamento.
+
+Esse é o tipo de decisão que a Amicci ajuda a estruturar: identificar onde marca própria faz sentido, desenvolver o produto certo e garantir que a execução não comprometa o resultado.
+
+Amicci Histórias — Sumirê. Assista ao case completo no YouTube. Link na bio.
+
+#amiccihistórias #sumirê #marcaprópria</div>
+                <div class="cb-cta"><strong>CTA</strong>Assista ao case completo. Link na bio.</div>
+                <div class="status-r">Rascunho</div>
+              </div>
+              <div>
+                <div class="cb-label">Brief para o designer</div>
+                <div class="cb-brief">
+                  <div class="cb-brief-title">BRIEF — 20 jun · LinkedIn · Sumirê dados</div>
+                  <div class="bf"><span class="bfk">Formato</span><span class="bfv">Thumbnail de vídeo · 1200x628px</span></div>
+                  <div class="bf"><span class="bfk">Conceito</span><span class="bfv">Frame do vídeo Sumirê focado na categoria de coloração (produto visível). Headline sobre resultado de categoria. Tom executivo.</span></div>
+                  <div class="bf"><span class="bfk">Headline na arte</span><span class="bfv"><span class="bfhl">Uma categoria. Uma decisão. Uma margem que ficou no varejista.</span></span></div>
+                  <div class="bf"><span class="bfk">Tag</span><span class="bfv">Amicci Histórias — Sumirê</span></div>
+                  <div class="bf"><span class="bfk">Fundo</span><span class="bfv">Frame do vídeo com overlay escuro. Se disponível, produto de coloração visível em segundo plano. Turquesa em acento. Logo Amicci branco.</span></div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </td>
+        <td class="td-inner"><span class="status-r">Rascunho</span></td>
+      </tr>
+
+      <tr>
+        <td class="td-inner"><span class="dc">20 jun</span></td>
+        <td class="td-inner"><span class="dy">Sex</span></td>
+        <td class="td-inner"><span class="bdg b-ig">Instagram</span></td>
+        <td class="td-inner"><span class="cdot cl-cotton"></span>Cottonbaby · emocional</td>
+        <td class="td-inner"><span class="tp tp-case">Corte · emocional</span></td>
+        <td>
+          <div class="td-inner">
+            <div class="pr">Cottonbaby — por que indicaria a Amicci</div>
+            <div class="sr">Depoimento pessoal. Tom genuíno, sem exagero.</div>
+            <div class="post-toggle" onclick="togglePost(this)"><span class="ti">›</span> Copy + Brief</div>
+          </div>
+          <div class="post-body">
+            <div class="pb-inner">
+              <div>
+                <div class="cb-label">Legenda Instagram</div>
+                <div class="cb-copy">Quando alguém indica uma parceria, é porque a experiência foi além do produto. Foi além do prazo. Foi além do que estava no contrato.
+
+É exatamente isso que a Cottonbaby conta quando fala da Amicci.
+
+Amicci Histórias — Cottonbaby. Assista no YouTube. Link na bio.
+
+#amiccihistórias #cottonbaby #marcaprópria #amicci</div>
+                <div class="cb-cta"><strong>CTA</strong>Assista no YouTube. Link na bio.</div>
+                <div class="status-r">Rascunho</div>
+              </div>
+              <div>
+                <div class="cb-label">Brief para o designer</div>
+                <div class="cb-brief">
+                  <div class="cb-brief-title">BRIEF — 20 jun · Instagram · Cottonbaby emocional</div>
+                  <div class="bf"><span class="bfk">Formato</span><span class="bfv">Thumbnail de vídeo · 1080x1080px</span></div>
+                  <div class="bf"><span class="bfk">Conceito</span><span class="bfv">Frame do depoimento — rosto do entrevistado em cena natural, expressão autêntica. Tom de recomendação genuína.</span></div>
+                  <div class="bf"><span class="bfk">Headline na arte</span><span class="bfv"><span class="bfhl">"Por que eu indicaria a Amicci."</span></span></div>
+                  <div class="bf"><span class="bfk">Tag</span><span class="bfv">Amicci Histórias — Cottonbaby</span></div>
+                  <div class="bf"><span class="bfk">Fundo</span><span class="bfv">Frame do depoimento com overlay suave. Aspas visuais em turquesa. Logo Amicci branco.</span></div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </td>
+        <td class="td-inner"><span class="status-r">Rascunho</span></td>
+      </tr>
+
+      <tr>
+        <td class="td-inner"><span class="dc">20 jun</span></td>
+        <td class="td-inner"><span class="dy">Sex</span></td>
+        <td class="td-inner"><span class="bdg b-wake">Wake · LI+IG</span></td>
+        <td class="td-inner"><span class="cdot cl-carrefour"></span>Carrefour estático</td>
+        <td class="td-inner"><span class="tp tp-wake">Post estático</span></td>
+        <td><div class="td-inner"><div class="pr">Estático: 21% das vendas — o que esse número significa</div><div class="sr">Big number em destaque. Contexto em micro-texto. Fundo escuro, turquesa. Compartilhável.</div><span class="status-r">Rascunho</span></div></td>
+        <td class="td-inner"><span class="status-r">Rascunho</span></td>
+      </tr>
+
+    </tbody></table>
+  </div>
+
+  <!-- SEMANA TEMPEROLA -->
+  <div class="week">
+    <div class="week-h">Semana 4 · 23–27 jun — Temperola <span>E-mail V4 + I4 em 25 jun</span></div>
+    <table class="ct"><thead><tr><th>Data</th><th>Dia</th><th>Canal</th><th>Tema</th><th>Tipo</th><th>Pauta</th><th>Status</th></tr></thead>
+    <tbody>
+      <tr>
+        <td class="td-inner"><span class="dc">23 jun</span></td><td class="td-inner"><span class="dy">Seg</span></td>
+        <td class="td-inner"><span class="bdg b-yt">YouTube</span></td>
+        <td class="td-inner"><span class="cdot cl-temperola"></span>Temperola</td>
+        <td class="td-inner"><span class="tp tp-case">Upload completo</span></td>
+        <td><div class="td-inner"><div class="pr">Temperola — vídeo completo</div><div class="sr">Título YT: "Como a Temperola foi de 10% para 40% de receita com marca própria — case Amicci"</div><span class="status-r">Rascunho</span></div></td>
+        <td class="td-inner"><span class="status-r">Rascunho</span></td>
+      </tr>
+      <tr>
+        <td class="td-inner"><span class="dc">23 jun</span></td><td class="td-inner"><span class="dy">Seg</span></td>
+        <td class="td-inner"><span class="bdg b-li">LinkedIn</span></td>
+        <td class="td-inner"><span class="cdot cl-temperola"></span>Temperola · dados</td>
+        <td class="td-inner"><span class="tp tp-case">Corte · PLMA + crédito</span></td>
+        <td>
+          <div class="td-inner">
+            <div class="pr">Temperola: PLMA + crédito — a estrutura que viabilizou 10% para 40%</div>
+            <div class="sr">Crédito e capital como viabilizadores. Tom executivo. Antecede E-mail V4 em 2 dias.</div>
+            <div class="post-toggle" onclick="togglePost(this)"><span class="ti">›</span> Copy + Brief</div>
+          </div>
+          <div class="post-body">
+            <div class="pb-inner">
+              <div>
+                <div class="cb-label">Legenda LinkedIn</div>
+                <div class="cb-copy">O faturamento de marcas próprias da Temperola subiu de 10% para 40% de toda a receita da empresa.
+
+Esse número não veio só de produto bom. Veio de uma decisão estratégica tomada com o contexto certo: o que fazer, com quem fazer e como viabilizar financeiramente o processo.
+
+A linha de crédito da Amicci foi parte dessa virada. Pensada para o momento em que a operação tem o produto mapeado mas ainda não tem o capital para tirar do papel.
+
+Amicci Histórias — Temperola. Assista ao case completo no YouTube. Link na bio.
+
+#amiccihistórias #temperola #marcaprópria #plma</div>
+                <div class="cb-cta"><strong>CTA</strong>Assista ao case completo. Link na bio.</div>
+                <div class="status-r">Rascunho</div>
+              </div>
+              <div>
+                <div class="cb-label">Brief para o designer</div>
+                <div class="cb-brief">
+                  <div class="cb-brief-title">BRIEF — 23 jun · LinkedIn · Temperola dados</div>
+                  <div class="bf"><span class="bfk">Formato</span><span class="bfv">Thumbnail de vídeo · 1200x628px</span></div>
+                  <div class="bf"><span class="bfk">Conceito</span><span class="bfv">Arte com dado em destaque antes/depois. Frame do vídeo Temperola ao fundo. Tom executivo e factual.</span></div>
+                  <div class="bf"><span class="bfk">Headline na arte</span><span class="bfv"><span class="bfhl">De 10% para 40% da receita. O que mudou na Temperola.</span></span></div>
+                  <div class="bf"><span class="bfk">Tag</span><span class="bfv">Amicci Histórias — Temperola</span></div>
+                  <div class="bf"><span class="bfk">Fundo</span><span class="bfv">Frame do vídeo com overlay escuro. Dado "10% → 40%" em turquesa grande. Logo Amicci branco.</span></div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </td>
+        <td class="td-inner"><span class="status-r">Rascunho</span></td>
+      </tr>
+      <tr>
+        <td class="td-inner"><span class="dc">24 jun</span></td><td class="td-inner"><span class="dy">Ter</span></td>
+        <td class="td-inner"><span class="bdg b-ig">Instagram</span></td>
+        <td class="td-inner"><span class="cdot cl-temperola"></span>Temperola · emocional</td>
+        <td class="td-inner"><span class="tp tp-case">Corte · crédito</span></td>
+        <td>
+          <div class="td-inner">
+            <div class="pr">Sobre crédito — a história de quem tinha o produto e encontrou o capital</div>
+            <div class="sr">Narrativa de superação. Tom humano e próximo.</div>
+            <div class="post-toggle" onclick="togglePost(this)"><span class="ti">›</span> Copy + Brief</div>
+          </div>
+          <div class="post-body">
+            <div class="pb-inner">
+              <div>
+                <div class="cb-label">Legenda Instagram</div>
+                <div class="cb-copy">Sabia o que queria. Sabia para quem queria fazer. O que faltava era capital.
+
+Esse é o ponto onde muitos projetos de marca própria param. A Temperola não parou.
+
+Amicci Histórias — Temperola. Assista no YouTube. Link na bio.
+
+#amiccihistórias #temperola #marcaprópria #amicci</div>
+                <div class="cb-cta"><strong>CTA</strong>Assista no YouTube. Link na bio.</div>
+                <div class="status-r">Rascunho</div>
+              </div>
+              <div>
+                <div class="cb-label">Brief para o designer</div>
+                <div class="cb-brief">
+                  <div class="cb-brief-title">BRIEF — 24 jun · Instagram · Temperola emocional</div>
+                  <div class="bf"><span class="bfk">Formato</span><span class="bfv">Thumbnail de vídeo · 1080x1080px</span></div>
+                  <div class="bf"><span class="bfk">Conceito</span><span class="bfv">Frame emocional — rosto do entrevistado em momento reflexivo ou de conquista. Tom de superação genuína.</span></div>
+                  <div class="bf"><span class="bfk">Headline na arte</span><span class="bfv"><span class="bfhl">Sabia o produto. Faltava o capital. Não parou.</span></span></div>
+                  <div class="bf"><span class="bfk">Tag</span><span class="bfv">Amicci Histórias — Temperola</span></div>
+                  <div class="bf"><span class="bfk">Fundo</span><span class="bfv">Frame do entrevistado com overlay suave. Painel de headline em tipografia bold branca. Logo Amicci branco.</span></div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </td>
+        <td class="td-inner"><span class="status-r">Rascunho</span></td>
+      </tr>
+      <tr>
+        <td class="td-inner"><span class="dc">24 jun</span></td><td class="td-inner"><span class="dy">Ter</span></td>
+        <td class="td-inner"><span class="bdg b-wake">Wake · LI</span></td>
+        <td class="td-inner"><span class="cdot cl-sumire"></span>Sumirê estático</td>
+        <td class="td-inner"><span class="tp tp-wake">Carrossel estático</span></td>
+        <td><div class="td-inner"><div class="pr">500 produtos — marcos da jornada Sumirê com a Amicci</div><div class="sr">Linha do tempo visual. Formato Wake. Turquesa.</div><span class="status-r">Rascunho</span></div></td>
+        <td class="td-inner"><span class="status-r">Rascunho</span></td>
+      </tr>
+      <tr>
+        <td class="td-inner"><span class="dc">25 jun</span></td><td class="td-inner"><span class="dy">Qua</span></td>
+        <td class="td-inner"><span class="bdg b-em">E-mail</span></td>
+        <td class="td-inner"><span class="cdot cl-inst"></span>Varejo + Indústria</td>
+        <td class="td-inner"><span class="tp tp-inst">Disparo duplo</span></td>
+        <td><div class="td-inner"><div class="pr">Disparo E-mail V4 (Varejo) + E-mail I4 (Indústria)</div><div class="em-anchor">E-mail V4 · Crédito + Temperola</div> <div class="em-anchor">E-mail I4 · Indústria</div></div></td>
+        <td class="td-inner"><span class="status-r">Rascunho</span></td>
+      </tr>
+      <tr>
+        <td class="td-inner"><span class="dc">26 jun</span></td><td class="td-inner"><span class="dy">Qui</span></td>
+        <td class="td-inner"><span class="bdg b-li">LinkedIn</span></td>
+        <td class="td-inner"><span class="cdot cl-carrefour"></span>Carrefour · Sam's Club</td>
+        <td class="td-inner"><span class="tp tp-case">Corte · dados</span></td>
+        <td>
+          <div class="td-inner">
+            <div class="pr">Carrefour — penetração Sam's Club: como a parceria Amicci viabilizou a expansão</div>
+            <div class="sr">Penetração por bandeira. Tom analítico, executivos de categoria.</div>
+            <div class="post-toggle" onclick="togglePost(this)"><span class="ti">›</span> Copy + Brief</div>
+          </div>
+          <div class="post-body">
+            <div class="pb-inner">
+              <div>
+                <div class="cb-label">Legenda LinkedIn</div>
+                <div class="cb-copy">A parceria entre Carrefour e Amicci não ficou restrita a um formato de loja. Ela avançou para o Sam's Club — com o mesmo nível de método, governança e qualidade que sustenta a operação de marca própria do grupo.
+
+Expandir marca própria entre bandeiras é um desafio de processo, não de produto. Requer que a plataforma de execução seja robusta o suficiente para manter o padrão independente do canal.
+
+Amicci Histórias — Carrefour. Assista ao case completo no YouTube. Link na bio.
+
+#amiccihistórias #carrefour #samsclub #marcaprópria</div>
+                <div class="cb-cta"><strong>CTA</strong>Assista ao case completo. Link na bio.</div>
+                <div class="status-r">Rascunho</div>
+              </div>
+              <div>
+                <div class="cb-label">Brief para o designer</div>
+                <div class="cb-brief">
+                  <div class="cb-brief-title">BRIEF — 26 jun · LinkedIn · Carrefour Sam's Club</div>
+                  <div class="bf"><span class="bfk">Formato</span><span class="bfv">Thumbnail de vídeo · 1200x628px</span></div>
+                  <div class="bf"><span class="bfk">Headline na arte</span><span class="bfv"><span class="bfhl">De Carrefour ao Sam's Club. O mesmo método. O mesmo padrão.</span></span></div>
+                  <div class="bf"><span class="bfk">Tag</span><span class="bfv">Amicci Histórias — Carrefour</span></div>
+                  <div class="bf"><span class="bfk">Fundo</span><span class="bfv">Frame do vídeo com overlay escuro. Turquesa em acento. Logo Amicci branco. (Não incluir logo Sam's Club sem aprovação.)</span></div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </td>
+        <td class="td-inner"><span class="status-r">Rascunho</span></td>
+      </tr>
+      <tr>
+        <td class="td-inner"><span class="dc">26 jun</span></td><td class="td-inner"><span class="dy">Qui</span></td>
+        <td class="td-inner"><span class="bdg b-wake">Wake · IG</span></td>
+        <td class="td-inner"><span class="cdot cl-temperola"></span>Temperola estático</td>
+        <td class="td-inner"><span class="tp tp-wake">Post estático</span></td>
+        <td><div class="td-inner"><div class="pr">De 10% para 40% — antes e depois em dados</div><div class="sr">Comparativo visual. Fundo escuro. Turquesa no dado principal.</div><span class="status-r">Rascunho</span></div></td>
+        <td class="td-inner"><span class="status-r">Rascunho</span></td>
+      </tr>
+      <tr>
+        <td class="td-inner"><span class="dc">27 jun</span></td><td class="td-inner"><span class="dy">Sex</span></td>
+        <td class="td-inner"><span class="bdg b-ig">Instagram</span></td>
+        <td class="td-inner"><span class="cdot cl-dunn"></span>dunnhumby · P2</td>
+        <td class="td-inner"><span class="tp tp-dado">Post único dado</span></td>
+        <td>
+          <div class="td-inner">
+            <div class="pr">5 maneiras de maximizar MDD na lealdade do cliente — dunnhumby RPI 2026</div>
+            <div class="sr">Framework visual. 5 alavancas. Carrossel ou estático. Fundo claro ou escuro.</div>
+            <div class="post-toggle" onclick="togglePost(this)"><span class="ti">›</span> Copy + Brief</div>
+          </div>
+          <div class="post-body">
+            <div class="pb-inner">
+              <div>
+                <div class="cb-label">Legenda Instagram</div>
+                <div class="cb-copy">O Retail Preference Index da dunnhumby mapeou 5 maneiras de maximizar o impacto da marca própria na lealdade do cliente.
+
+Executive sponsorship. Reposicionamento de marca do varejo. Sortimento ideal para o consumidor. Conexão com programas de fidelidade. Inovação orientada ao cliente.
+
+As cinco partem do mesmo princípio: marca própria não é departamento. É estratégia transversal.
+
+Fonte: dunnhumby RPI Brasil 2026 — apresentado no Fórum de Marcas Próprias da APAS Show.
+
+Conheça a plataforma Amicci. Link na bio.
+
+#marcaprópria #dunnhumby #varejo #fidelização</div>
+                <div class="cb-cta"><strong>CTA</strong>Conheça a plataforma Amicci. Link na bio.</div>
+                <div class="status-r">Rascunho</div>
+              </div>
+              <div>
+                <div class="cb-label">Brief para o designer</div>
+                <div class="cb-brief">
+                  <div class="cb-brief-title">BRIEF — 27 jun · Instagram · dunnhumby 5 maneiras</div>
+                  <div class="bf"><span class="bfk">Formato</span><span class="bfv">Carrossel 6 slides · 1080x1080px (ou post único com as 5 alavancas)</span></div>
+                  <div class="bf"><span class="bfk">Conceito</span><span class="bfv">Slide de capa com número 5 em destaque. Slides 2–6: uma alavanca por slide com ícone e micro-texto. Tom educativo e autoritativo.</span></div>
+                  <div class="bf"><span class="bfk">Capa</span><span class="bfv"><span class="bfhl">5 maneiras de maximizar MDD na lealdade do cliente.</span> Fonte: dunnhumby RPI 2026.</span></div>
+                  <div class="bf"><span class="bfk">Slides internos</span><span class="bfv">Número da alavanca em turquesa grande. Nome em Roboto Bold branco. Descrição em Regular branco 60%.</span></div>
+                  <div class="bf"><span class="bfk">Fundo</span><span class="bfv">Escuro #002831 em todos os slides. Logo Amicci branco em cada frame. "Fonte: dunnhumby RPI Brasil 2026" visível na capa.</span></div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </td>
+        <td class="td-inner"><span class="status-r">Rascunho</span></td>
+      </tr>
+    </tbody></table>
+  </div>
+</div>
+<!-- ═══ JULHO ═══ -->
+<div id="julho" class="section">
+  <div class="month-t">Julho 2026</div>
+  <div class="info"><strong>Contexto:</strong> Promofarma (07–11 jul), Petz (14–18 jul), Cremer (21–25 jul), Zinho (28–31 jul). Posts estáticos e dados dunnhumby/Sá preenchem os intervalos. Cortes específicos de Promofarma, Petz, Cremer e Zinho serão confirmados após você trazer as temáticas — mantidos como "A confirmar" até atualização.</div>
+
+  <div class="week">
+    <div class="week-h">Semana 1 · 30 jun–04 jul <span>Educativo + antecipação E-mail V5 + I5 em 02 jul</span></div>
+    <table class="ct"><thead><tr><th>Data</th><th>Dia</th><th>Canal</th><th>Tema</th><th>Tipo</th><th>Pauta</th><th>Status</th></tr></thead>
+    <tbody>
+      <tr>
+        <td class="td-inner"><span class="dc">30 jun</span></td><td class="td-inner"><span class="dy">Seg</span></td>
+        <td class="td-inner"><span class="bdg b-li">LinkedIn</span></td>
+        <td class="td-inner"><span class="cdot cl-sa"></span>Artigo Sá · P1</td>
+        <td class="td-inner"><span class="tp tp-inst">Post longo</span></td>
+        <td>
+          <div class="td-inner">
+            <div class="pr">O que dá errado na MDD no Brasil — e o que aprender com isso</div>
+            <div class="sr">Referência artigo Antônio Sá (Super Varejo maio 2026). 6 erros comuns. Tom analítico e propositivo.</div>
+            <div class="post-toggle" onclick="togglePost(this)"><span class="ti">›</span> Copy + Brief</div>
+          </div>
+          <div class="post-body">
+            <div class="pb-inner">
+              <div>
+                <div class="cb-label">Legenda LinkedIn</div>
+                <div class="cb-copy">Pior do que não ter marca própria é fazê-la mal feita. A rede enfrenta problemas recorrentes — de falhas de fornecedores a reclamações de clientes — que comprometem o resultado e a reputação.
+
+Seis erros que aparecem com frequência no varejo brasileiro ao tentar estruturar MDD sem o processo certo:
+
+Designar um gestor comercial sozinho, sem time dedicado, para "tocar" toda a agenda de marcas próprias. Escolher fornecedores por relacionamento, não por critério técnico. Apressar lançamentos sem estrutura suficiente. Assumir que a indústria garante qualidade sem auditoria própria. Começar pelas categorias mais difíceis, não pelas com maior probabilidade de sucesso. Acreditar que marca própria precisa ser sempre a mais barata da categoria.
+
+Para quem acerta, o ganho é real: mais competitividade, diferenciação clara, aumento de margens e fidelização que transforma o comportamento de compra.
+
+A estrutura de execução é o que separa um grupo do outro.
+
+A Amicci executa tudo. Fale com um especialista.</div>
+                <div class="cb-cta"><strong>CTA</strong>Fale com um especialista. Link na bio.</div>
+                <div class="status-r">Rascunho</div>
+              </div>
+              <div>
+                <div class="cb-label">Brief para o designer</div>
+                <div class="cb-brief">
+                  <div class="cb-brief-title">BRIEF — 30 jun · LinkedIn · Artigo Sá erros P1</div>
+                  <div class="bf"><span class="bfk">Formato</span><span class="bfv">Post único · 1200x628px</span></div>
+                  <div class="bf"><span class="bfk">Conceito</span><span class="bfv">Arte de lista visual. Fundo escuro. Headline provocativo sobre erros comuns. Tom de diagnóstico, não de julgamento.</span></div>
+                  <div class="bf"><span class="bfk">Headline na arte</span><span class="bfv"><span class="bfhl">O que mais trava a MDD no Brasil não é falta de produto. É falta de processo.</span></span></div>
+                  <div class="bf"><span class="bfk">Fundo</span><span class="bfv">Escuro #002831. Tipografia bold branca. Acento turquesa em elemento de destaque.</span></div>
+                  <div class="bf"><span class="bfk">Logo</span><span class="bfv">Amicci branco · canto inferior direito.</span></div>
+                  <div class="bf"><span class="bfk">Obs</span><span class="bfv">Não citar o artigo ou o autor na arte — apenas na legenda se quiser. A Amicci é a voz do post.</span></div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </td>
+        <td class="td-inner"><span class="status-r">Rascunho</span></td>
+      </tr>
+      <tr>
+        <td class="td-inner"><span class="dc">01 jul</span></td><td class="td-inner"><span class="dy">Ter</span></td>
+        <td class="td-inner"><span class="bdg b-ig">Instagram</span></td>
+        <td class="td-inner"><span class="cdot cl-inst"></span>Institucional · P3</td>
+        <td class="td-inner"><span class="tp tp-inst">Post único</span></td>
+        <td>
+          <div class="td-inner">
+            <div class="pr">Você tem o poder de criar o produto que seu cliente queria e não achava</div>
+            <div class="sr">Arte Key Visual slide 8/9. Fundo claro, símbolo "a" recortado.</div>
+            <div class="post-toggle" onclick="togglePost(this)"><span class="ti">›</span> Copy + Brief</div>
+          </div>
+          <div class="post-body">
+            <div class="pb-inner">
+              <div>
+                <div class="cb-label">Legenda Instagram</div>
+                <div class="cb-copy">Você tem o poder de criar o produto que seu cliente queria e não achava em lugar algum.
+
+A primeira plataforma de execução de marcas próprias do Brasil.
+
+Conheça a Amicci. Link na bio.
+
+#marcaprópria #privatelabel #varejo #amicci</div>
+                <div class="cb-cta"><strong>CTA</strong>Conheça a Amicci. Link na bio.</div>
+                <div class="status-r">Rascunho</div>
+              </div>
+              <div>
+                <div class="cb-label">Brief para o designer</div>
+                <div class="cb-brief">
+                  <div class="cb-brief-title">BRIEF — 01 jul · Instagram · P3 proposta central</div>
+                  <div class="bf"><span class="bfk">Formato</span><span class="bfv">Post único · 1080x1080px</span></div>
+                  <div class="bf"><span class="bfk">Referência KV</span><span class="bfv">Slide 8/9 — layout split ou fundo azul bebê, foto com símbolo "a" da Amicci recortado em frente</span></div>
+                  <div class="bf"><span class="bfk">Headline na arte</span><span class="bfv"><span class="bfhl">Você tem o poder de criar o produto que seu cliente queria e não achava em lugar algum.</span></span></div>
+                  <div class="bf"><span class="bfk">Fundo</span><span class="bfv">Claro — azul bebê #EAF9F8 ou branco. Foto de varejo/produto em segundo plano com símbolo "a" recortado em sobreposição.</span></div>
+                  <div class="bf"><span class="bfk">Tipografia</span><span class="bfv">Roboto Bold escuro (#212323). "poder de criar" ou palavra-chave em turquesa.</span></div>
+                  <div class="bf"><span class="bfk">Logo</span><span class="bfv">Amicci colorido (fundo claro).</span></div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </td>
+        <td class="td-inner"><span class="status-r">Rascunho</span></td>
+      </tr>
+      <tr>
+        <td class="td-inner"><span class="dc">01 jul</span></td><td class="td-inner"><span class="dy">Ter</span></td>
+        <td class="td-inner"><span class="bdg b-wake">Wake · LI</span></td>
+        <td class="td-inner"><span class="cdot cl-temperola"></span>Temperola estático</td>
+        <td class="td-inner"><span class="tp tp-wake">Post estático</span></td>
+        <td><div class="td-inner"><div class="pr">De 10% para 40% — carrossel de resultado Wake</div><div class="sr">Formato Wake. Antes/depois com dado principal. Turquesa.</div><span class="status-r">Rascunho</span></div></td>
+        <td class="td-inner"><span class="status-r">Rascunho</span></td>
+      </tr>
+      <tr>
+        <td class="td-inner"><span class="dc">02 jul</span></td><td class="td-inner"><span class="dy">Qua</span></td>
+        <td class="td-inner"><span class="bdg b-em">E-mail</span></td>
+        <td class="td-inner"><span class="cdot cl-inst"></span>Varejo + Indústria</td>
+        <td class="td-inner"><span class="tp tp-inst">Disparo duplo</span></td>
+        <td><div class="td-inner"><div class="pr">Disparo E-mail V5 + E-mail I5</div><div class="em-anchor">E-mail V5 · IA + MDD</div> <div class="em-anchor">E-mail I5 · Indústria</div></div></td>
+        <td class="td-inner"><span class="status-r">Rascunho</span></td>
+      </tr>
+    </tbody></table>
+  </div>
+
+  <div class="week">
+    <div class="week-h">Semana 2 · 07–11 jul — Promofarma <span>E-mail V6 + I6 em 09 jul</span></div>
+    <table class="ct"><thead><tr><th>Data</th><th>Dia</th><th>Canal</th><th>Tema</th><th>Tipo</th><th>Pauta</th><th>Status</th></tr></thead>
+    <tbody>
+      <tr><td class="td-inner"><span class="dc">07 jul</span></td><td class="td-inner"><span class="dy">Seg</span></td><td class="td-inner"><span class="bdg b-yt">YouTube</span></td><td class="td-inner"><span class="cdot cl-promofarma"></span>Promofarma</td><td class="td-inner"><span class="tp tp-case">Upload completo</span></td><td><div class="td-inner"><div class="pr">Promofarma — vídeo completo</div><div class="sr">Upload + SEO. Indexar antes dos cortes.</div><span class="status-r">Rascunho</span></div></td><td class="td-inner"><span class="status-r">Rascunho</span></td></tr>
+      <tr><td class="td-inner"><span class="dc">07 jul</span></td><td class="td-inner"><span class="dy">Seg</span></td><td class="td-inner"><span class="bdg b-li">LinkedIn</span></td><td class="td-inner"><span class="cdot cl-promofarma"></span>Promofarma · dados</td><td class="td-inner"><span class="tp tp-case">Corte A · dados</span></td><td><div class="td-inner"><div class="pr">Promofarma — resultado em dados (temática a confirmar com equipe)</div><div class="sr">Tom executivo. Antecede E-mail V6 em 2 dias.</div><span class="status-w">A confirmar</span></div></td><td class="td-inner"><span class="status-w">A confirmar</span></td></tr>
+      <tr><td class="td-inner"><span class="dc">08 jul</span></td><td class="td-inner"><span class="dy">Ter</span></td><td class="td-inner"><span class="bdg b-ig">Instagram</span></td><td class="td-inner"><span class="cdot cl-promofarma"></span>Promofarma · emocional</td><td class="td-inner"><span class="tp tp-case">Corte B · emocional</span></td><td><div class="td-inner"><div class="pr">Promofarma — narrativa emocional (temática a confirmar)</div><div class="sr">Tom humano. Frame do entrevistado.</div><span class="status-w">A confirmar</span></div></td><td class="td-inner"><span class="status-w">A confirmar</span></td></tr>
+      <tr><td class="td-inner"><span class="dc">08 jul</span></td><td class="td-inner"><span class="dy">Ter</span></td><td class="td-inner"><span class="bdg b-wake">Wake · LI+IG</span></td><td class="td-inner"><span class="cdot cl-promofarma"></span>Promofarma estático</td><td class="td-inner"><span class="tp tp-wake">Post estático</span></td><td><div class="td-inner"><div class="pr">Promofarma — resultado principal em destaque (a confirmar)</div><div class="sr">Formato Wake. Compartilhável.</div><span class="status-w">A confirmar</span></div></td><td class="td-inner"><span class="status-w">A confirmar</span></td></tr>
+      <tr><td class="td-inner"><span class="dc">09 jul</span></td><td class="td-inner"><span class="dy">Qua</span></td><td class="td-inner"><span class="bdg b-em">E-mail</span></td><td class="td-inner"><span class="cdot cl-inst"></span>Varejo + Indústria</td><td class="td-inner"><span class="tp tp-inst">Disparo duplo</span></td><td><div class="td-inner"><div class="pr">Disparo E-mail V6 + E-mail I6</div><div class="em-anchor">E-mail V6 · Case Promofarma</div> <div class="em-anchor">E-mail I6 · Indústria</div></div></td><td class="td-inner"><span class="status-r">Rascunho</span></td></tr>
+      <tr>
+        <td class="td-inner"><span class="dc">10 jul</span></td><td class="td-inner"><span class="dy">Qui</span></td>
+        <td class="td-inner"><span class="bdg b-li">LinkedIn</span></td>
+        <td class="td-inner"><span class="cdot cl-dunn"></span>dunnhumby · P2</td>
+        <td class="td-inner"><span class="tp tp-dado">Post longo</span></td>
+        <td>
+          <div class="td-inner">
+            <div class="pr">SOW e lealdade: o consumidor brasileiro já recompensa quem tem MDD de qualidade</div>
+            <div class="sr">Dado dunnhumby: correlação SOW x satisfação MDD na América Latina (R²=0,4079). O mais alto entre regiões emergentes.</div>
+            <div class="post-toggle" onclick="togglePost(this)"><span class="ti">›</span> Copy + Brief</div>
+          </div>
+          <div class="post-body">
+            <div class="pb-inner">
+              <div>
+                <div class="cb-label">Legenda LinkedIn</div>
+                <div class="cb-copy">O consumidor brasileiro já está redistribuindo o carrinho de compras com base na qualidade da marca própria do varejista.
+
+Dados do Retail Preference Index da dunnhumby mostram que, na América Latina, a correlação entre satisfação com marca própria e share of wallet do varejista é de R²=0,4079 — a mais alta entre os mercados emergentes analisados.
+
+Em linguagem prática: quando o varejista tem uma boa marca própria, o cliente compra mais nele. Compra com mais frequência. Concentra o carrinho.
+
+Esse comportamento já existe no Brasil. O varejo que estruturar a execução de MDD agora vai capturar essa fidelização antes da concorrência.
+
+A Amicci executa tudo. Fale com um especialista.
+
+Fonte: dunnhumby RPI Brasil 2026</div>
+                <div class="cb-cta"><strong>CTA</strong>Fale com um especialista. Link na bio.</div>
+                <div class="status-r">Rascunho</div>
+              </div>
+              <div>
+                <div class="cb-label">Brief para o designer</div>
+                <div class="cb-brief">
+                  <div class="cb-brief-title">BRIEF — 10 jul · LinkedIn · dunnhumby SOW P2</div>
+                  <div class="bf"><span class="bfk">Formato</span><span class="bfv">Post único · 1200x628px</span></div>
+                  <div class="bf"><span class="bfk">Conceito</span><span class="bfv">Arte de dado. Conceito visual de concentração de compras (carrinho, seta, fidelidade). Tom analítico.</span></div>
+                  <div class="bf"><span class="bfk">Headline na arte</span><span class="bfv"><span class="bfhl">Quem tem MDD de qualidade retém mais do carrinho do consumidor.</span></span></div>
+                  <div class="bf"><span class="bfk">Texto de apoio</span><span class="bfv">Fonte: dunnhumby RPI Brasil 2026</span></div>
+                  <div class="bf"><span class="bfk">Fundo</span><span class="bfv">Escuro #002831. Tipografia bold branca. Turquesa em elemento de dado ou seta visual.</span></div>
+                  <div class="bf"><span class="bfk">Obs</span><span class="bfv">Sem gráficos de dispersão — apenas o insight em formato textual/visual simples. Fonte da pesquisa obrigatória.</span></div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </td>
+        <td class="td-inner"><span class="status-r">Rascunho</span></td>
+      </tr>
+      <tr><td class="td-inner"><span class="dc">11 jul</span></td><td class="td-inner"><span class="dy">Sex</span></td><td class="td-inner"><span class="bdg b-ig">Instagram</span></td><td class="td-inner"><span class="cdot cl-inst"></span>Institucional · P1</td><td class="td-inner"><span class="tp tp-inst">Post único</span></td><td><div class="td-inner"><div class="pr">Marca própria é transformar distribuição em margem</div><div class="sr">Arte Key Visual slide 21. Perguntas em pílulas, comparativo método antigo vs Amicci.</div><span class="status-r">Rascunho</span></div></td><td class="td-inner"><span class="status-r">Rascunho</span></td></tr>
+    </tbody></table>
+  </div>
+
+  <div class="week">
+    <div class="week-h">Semana 3 · 14–18 jul — Petz <span>E-mail V7 + I7 em 16 jul</span></div>
+    <table class="ct"><thead><tr><th>Data</th><th>Dia</th><th>Canal</th><th>Tema</th><th>Tipo</th><th>Pauta</th><th>Status</th></tr></thead>
+    <tbody>
+      <tr><td class="td-inner"><span class="dc">14 jul</span></td><td class="td-inner"><span class="dy">Seg</span></td><td class="td-inner"><span class="bdg b-yt">YouTube</span></td><td class="td-inner"><span class="cdot cl-petz"></span>Petz</td><td class="td-inner"><span class="tp tp-case">Upload completo</span></td><td><div class="td-inner"><div class="pr">Petz — vídeo completo</div><div class="sr">Título YT: "A grande sacada do Sá: uma equipe dedicada a private label via Amicci — case Petz + ZeeDog"</div><span class="status-r">Rascunho</span></div></td><td class="td-inner"><span class="status-r">Rascunho</span></td></tr>
+      <tr><td class="td-inner"><span class="dc">14 jul</span></td><td class="td-inner"><span class="dy">Seg</span></td><td class="td-inner"><span class="bdg b-li">LinkedIn</span></td><td class="td-inner"><span class="cdot cl-petz"></span>Petz · dados</td><td class="td-inner"><span class="tp tp-case">Corte A · dados</span></td><td><div class="td-inner"><div class="pr">Petz — equipe dedicada a PL no varejo: o que isso significa em resultado (confirmar após edição)</div><div class="sr">Tom estratégico e executivo. Antecede E-mail V7 em 2 dias.</div><span class="status-w">A confirmar</span></div></td><td class="td-inner"><span class="status-w">A confirmar</span></td></tr>
+      <tr><td class="td-inner"><span class="dc">15 jul</span></td><td class="td-inner"><span class="dy">Ter</span></td><td class="td-inner"><span class="bdg b-ig">Instagram</span></td><td class="td-inner"><span class="cdot cl-petz"></span>Petz · emocional</td><td class="td-inner"><span class="tp tp-case">Corte B · emocional</span></td><td><div class="td-inner"><div class="pr">Petz — a grande sacada do Sá (narrativa emocional, confirmar após edição)</div><div class="sr">Tom de visão e liderança.</div><span class="status-w">A confirmar</span></div></td><td class="td-inner"><span class="status-w">A confirmar</span></td></tr>
+      <tr><td class="td-inner"><span class="dc">15 jul</span></td><td class="td-inner"><span class="dy">Ter</span></td><td class="td-inner"><span class="bdg b-wake">Wake · LI+IG</span></td><td class="td-inner"><span class="cdot cl-petz"></span>Petz estático</td><td class="td-inner"><span class="tp tp-wake">Post estático</span></td><td><div class="td-inner"><div class="pr">Petz + ZeeDog + Amicci — equipe dedicada PL em destaque</div><div class="sr">Formato Wake. Compartilhável.</div><span class="status-w">A confirmar</span></div></td><td class="td-inner"><span class="status-w">A confirmar</span></td></tr>
+      <tr><td class="td-inner"><span class="dc">16 jul</span></td><td class="td-inner"><span class="dy">Qua</span></td><td class="td-inner"><span class="bdg b-em">E-mail</span></td><td class="td-inner"><span class="cdot cl-inst"></span>Varejo + Indústria</td><td class="td-inner"><span class="tp tp-inst">Disparo duplo</span></td><td><div class="td-inner"><div class="pr">Disparo E-mail V7 + E-mail I7</div><div class="em-anchor">E-mail V7 · Case Petz</div> <div class="em-anchor">E-mail I7 · Indústria</div></div></td><td class="td-inner"><span class="status-r">Rascunho</span></td></tr>
+      <tr>
+        <td class="td-inner"><span class="dc">17 jul</span></td><td class="td-inner"><span class="dy">Qui</span></td>
+        <td class="td-inner"><span class="bdg b-li">LinkedIn</span></td>
+        <td class="td-inner"><span class="cdot cl-inst"></span>Institucional · P3</td>
+        <td class="td-inner"><span class="tp tp-inst">Carrossel</span></td>
+        <td>
+          <div class="td-inner">
+            <div class="pr">Como vender mais MDD sem lançar novos SKUs — 3 alavancas</div>
+            <div class="sr">Carrossel educativo. Referência artigo Sá + prática Amicci. Tom de conteúdo de valor.</div>
+            <div class="post-toggle" onclick="togglePost(this)"><span class="ti">›</span> Copy + Brief</div>
+          </div>
+          <div class="post-body">
+            <div class="pb-inner">
+              <div>
+                <div class="cb-label">Legenda LinkedIn</div>
+                <div class="cb-copy">Crescer em marca própria não significa necessariamente lançar mais SKUs. Na maioria das operações que a gente conhece, as maiores alavancas estão em três movimentos que não exigem nenhum produto novo.
+
+Expansão de categoria com o portfólio que já existe. Um produto que funciona bem em uma categoria tem alta probabilidade de funcionar em categorias adjacentes com o mesmo consumidor.
+
+Melhoria de embalagem e comunicação dos SKUs já lançados. Produto bom com embalagem fraca perde margem para produto mediano com presença visual forte na gôndola.
+
+Governança de performance. A maioria dos varejos não tem visibilidade sobre o que está vendendo, por quê e onde. Com esse dado na mão, as decisões de sortimento mudam completamente.
+
+A Amicci trabalha esses três com cada cliente. Fale com um especialista.</div>
+                <div class="cb-cta"><strong>CTA</strong>Fale com um especialista. Link na bio.</div>
+                <div class="status-r">Rascunho</div>
+              </div>
+              <div>
+                <div class="cb-label">Brief para o designer</div>
+                <div class="cb-brief">
+                  <div class="cb-brief-title">BRIEF — 17 jul · LinkedIn · 3 alavancas P3</div>
+                  <div class="bf"><span class="bfk">Formato</span><span class="bfv">Carrossel 4 slides · 1080x1080px</span></div>
+                  <div class="bf"><span class="bfk">Capa</span><span class="bfv"><span class="bfhl">3 alavancas de crescimento em MDD sem novos SKUs.</span> Fundo escuro. Símbolo Amicci ao fundo.</span></div>
+                  <div class="bf"><span class="bfk">Slides 2–4</span><span class="bfv">Número da alavanca em turquesa grande. Nome em Roboto Bold branco. Descrição em Regular branco. Ícone minimalista.</span></div>
+                  <div class="bf"><span class="bfk">Slide CTA</span><span class="bfv">Fundo turquesa escuro #016071. "A Amicci executa tudo. Fale com um especialista." Logo Amicci branco.</span></div>
+                  <div class="bf"><span class="bfk">Estilo</span><span class="bfv">Wake Commerce. Fundo escuro em todos. Turquesa como cor de destaque dos números.</span></div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </td>
+        <td class="td-inner"><span class="status-r">Rascunho</span></td>
+      </tr>
+      <tr><td class="td-inner"><span class="dc">18 jul</span></td><td class="td-inner"><span class="dy">Sex</span></td><td class="td-inner"><span class="bdg b-ig">Instagram</span></td><td class="td-inner"><span class="cdot cl-inst"></span>Institucional · P1</td><td class="td-inner"><span class="tp tp-inst">Post único</span></td><td><div class="td-inner"><div class="pr">Marca própria não é produto barato — versão lifestyle</div><div class="sr">Arte Key Visual slide 19. Foto pessoa + painel branco sobreposto. "É estratégia." como assinatura.</div><span class="status-r">Rascunho</span></div></td><td class="td-inner"><span class="status-r">Rascunho</span></td></tr>
+    </tbody></table>
+  </div>
+
+  <div class="week">
+    <div class="week-h">Semana 4 · 21–25 jul — Cremer <span>E-mail V8 + I8 em 23 jul</span></div>
+    <table class="ct"><thead><tr><th>Data</th><th>Dia</th><th>Canal</th><th>Tema</th><th>Tipo</th><th>Pauta</th><th>Status</th></tr></thead>
+    <tbody>
+      <tr><td class="td-inner"><span class="dc">21 jul</span></td><td class="td-inner"><span class="dy">Seg</span></td><td class="td-inner"><span class="bdg b-yt">YouTube</span></td><td class="td-inner"><span class="cdot cl-cremer"></span>Cremer</td><td class="td-inner"><span class="tp tp-case">Upload completo</span></td><td><div class="td-inner"><div class="pr">Cremer — vídeo completo</div><div class="sr">Título YT: "3 ingredientes para o sucesso da marca própria — case Cremer × Amicci"</div><span class="status-r">Rascunho</span></div></td><td class="td-inner"><span class="status-r">Rascunho</span></td></tr>
+      <tr><td class="td-inner"><span class="dc">21 jul</span></td><td class="td-inner"><span class="dy">Seg</span></td><td class="td-inner"><span class="bdg b-li">LinkedIn</span></td><td class="td-inner"><span class="cdot cl-cremer"></span>Cremer · dados</td><td class="td-inner"><span class="tp tp-case">Corte A · dados</span></td><td><div class="td-inner"><div class="pr">Cremer — os 3 ingredientes para o sucesso da MDD (confirmar após edição)</div><div class="sr">Framework de sucesso em dados. Tom técnico. Antecede E-mail V8 em 2 dias.</div><span class="status-w">A confirmar</span></div></td><td class="td-inner"><span class="status-w">A confirmar</span></td></tr>
+      <tr><td class="td-inner"><span class="dc">22 jul</span></td><td class="td-inner"><span class="dy">Ter</span></td><td class="td-inner"><span class="bdg b-ig">Instagram</span></td><td class="td-inner"><span class="cdot cl-cremer"></span>Cremer · emocional</td><td class="td-inner"><span class="tp tp-case">Corte B · emocional</span></td><td><div class="td-inner"><div class="pr">Cremer — importância da parceria Amicci + PLMA (confirmar após edição)</div><div class="sr">Tom de propósito e missão.</div><span class="status-w">A confirmar</span></div></td><td class="td-inner"><span class="status-w">A confirmar</span></td></tr>
+      <tr><td class="td-inner"><span class="dc">22 jul</span></td><td class="td-inner"><span class="dy">Ter</span></td><td class="td-inner"><span class="bdg b-wake">Wake · LI+IG</span></td><td class="td-inner"><span class="cdot cl-cremer"></span>Cremer estático</td><td class="td-inner"><span class="tp tp-wake">Carrossel estático</span></td><td><div class="td-inner"><div class="pr">3 ingredientes para o sucesso da MDD — framework visual Wake</div><div class="sr">3 slides de ingrediente. Ícone + micro-texto. Fundo escuro. Turquesa.</div><span class="status-w">A confirmar</span></div></td><td class="td-inner"><span class="status-w">A confirmar</span></td></tr>
+      <tr><td class="td-inner"><span class="dc">23 jul</span></td><td class="td-inner"><span class="dy">Qua</span></td><td class="td-inner"><span class="bdg b-em">E-mail</span></td><td class="td-inner"><span class="cdot cl-inst"></span>Varejo + Indústria</td><td class="td-inner"><span class="tp tp-inst">Disparo duplo</span></td><td><div class="td-inner"><div class="pr">Disparo E-mail V8 + E-mail I8</div><div class="em-anchor">E-mail V8 · Case Cremer</div> <div class="em-anchor">E-mail I8 · Indústria</div></div></td><td class="td-inner"><span class="status-r">Rascunho</span></td></tr>
+      <tr><td class="td-inner"><span class="dc">24 jul</span></td><td class="td-inner"><span class="dy">Qui</span></td><td class="td-inner"><span class="bdg b-li">LinkedIn</span></td><td class="td-inner"><span class="cdot cl-dunn"></span>dunnhumby · P2</td><td class="td-inner"><span class="tp tp-dado">Post longo</span></td><td><div class="td-inner"><div class="pr">Brazil Shopper Persona: 6 perfis de consumidor que o varejo brasileiro ainda não atende com MDD</div><div class="sr">Referência dunnhumby RPI 2026. Buscador de valor, Fiel pragmático, Divisores de carrinho etc. Tom de segmentação e oportunidade.</div><span class="status-r">Rascunho</span></div></td><td class="td-inner"><span class="status-r">Rascunho</span></td></tr>
+      <tr><td class="td-inner"><span class="dc">25 jul</span></td><td class="td-inner"><span class="dy">Sex</span></td><td class="td-inner"><span class="bdg b-ig">Instagram</span></td><td class="td-inner"><span class="cdot cl-inst"></span>Institucional · P2</td><td class="td-inner"><span class="tp tp-inst">Post único dado</span></td><td><div class="td-inner"><div class="pr">92% das maiores redes supermercadistas já usam MDD como estratégia — ABRAS 2023</div><div class="sr">Big number fundo escuro. A pergunta mudou de "se" para "como".</div><span class="status-r">Rascunho</span></div></td><td class="td-inner"><span class="status-r">Rascunho</span></td></tr>
+    </tbody></table>
+  </div>
+
+  <div class="week">
+    <div class="week-h">Semana 5 · 28–31 jul — Zinho <span>slots parcialmente a confirmar</span></div>
+    <table class="ct"><thead><tr><th>Data</th><th>Dia</th><th>Canal</th><th>Tema</th><th>Tipo</th><th>Pauta</th><th>Status</th></tr></thead>
+    <tbody>
+      <tr><td class="td-inner"><span class="dc">28 jul</span></td><td class="td-inner"><span class="dy">Seg</span></td><td class="td-inner"><span class="bdg b-yt">YouTube</span></td><td class="td-inner"><span class="cdot cl-zinho"></span>Zinho</td><td class="td-inner"><span class="tp tp-case">Upload completo</span></td><td><div class="td-inner"><div class="pr">Zinho — vídeo completo</div><div class="sr">Upload + SEO. Título a confirmar com equipe.</div><span class="status-r">Rascunho</span></div></td><td class="td-inner"><span class="status-r">Rascunho</span></td></tr>
+      <tr><td class="td-inner"><span class="dc">28 jul</span></td><td class="td-inner"><span class="dy">Seg</span></td><td class="td-inner"><span class="bdg b-li">LinkedIn</span></td><td class="td-inner"><span class="cdot cl-zinho"></span>Zinho · dados</td><td class="td-inner"><span class="tp tp-case">Corte · dados</span></td><td><div class="td-inner"><div class="pr">Zinho — impacto de MDD em dados (confirmar após edição)</div><div class="sr">Tom executivo e factual.</div><span class="status-w">A confirmar</span></div></td><td class="td-inner"><span class="status-w">A confirmar</span></td></tr>
+      <tr><td class="td-inner"><span class="dc">29 jul</span></td><td class="td-inner"><span class="dy">Ter</span></td><td class="td-inner"><span class="bdg b-ig">Instagram</span></td><td class="td-inner"><span class="cdot cl-zinho"></span>Zinho · emocional</td><td class="td-inner"><span class="tp tp-case">Corte · emocional</span></td><td><div class="td-inner"><div class="pr">Match no discurso Zinho e Amicci — propósito compartilhado (confirmar após edição)</div><div class="sr">Tom de parceria genuína.</div><span class="status-w">A confirmar</span></div></td><td class="td-inner"><span class="status-w">A confirmar</span></td></tr>
+      <tr><td class="td-inner"><span class="dc">29 jul</span></td><td class="td-inner"><span class="dy">Ter</span></td><td class="td-inner"><span class="bdg b-wake">Wake · LI+IG</span></td><td class="td-inner"><span class="cdot cl-zinho"></span>Zinho estático</td><td class="td-inner"><span class="tp tp-wake">Post estático</span></td><td><div class="td-inner"><div class="pr">Zinho — resultado em destaque (a confirmar)</div><div class="sr">Formato Wake. Compartilhável.</div><span class="status-w">A confirmar</span></div></td><td class="td-inner"><span class="status-w">A confirmar</span></td></tr>
+      <tr><td class="td-inner"><span class="dc">31 jul</span></td><td class="td-inner"><span class="dy">Qui</span></td><td class="td-inner"><span class="bdg b-ig">Instagram</span></td><td class="td-inner"><span class="cdot cl-inst"></span>Institucional · P1</td><td class="td-inner"><span class="tp tp-inst">Post único</span></td><td><div class="td-inner"><div class="pr">O consumidor adora sua loja, mas não voltou porque faltou oferta personalizada</div><div class="sr">Arte Key Visual slide 19. Retenção e portfólio exclusivo como argumento central.</div><span class="status-r">Rascunho</span></div></td><td class="td-inner"><span class="status-r">Rascunho</span></td></tr>
+    </tbody></table>
+  </div>
+</div>
+
+<!-- ═══ AGOSTO ═══ -->
+<div id="agosto" class="section">
+  <div class="month-t">Agosto 2026 · Encerramento em 22 ago</div>
+  <div class="info"><strong>Contexto:</strong> Tintas MC (04–08 ago) e Nagumo (11–15 ago) entram com cases prontos em agosto. Semana de 18–22 ago é encerramento: post síntese, logos dos 10 clientes, e-mails V9/V10 e I8. Após 22 ago: ritmo espaçado. Johnny começa a circular em formato estático.</div>
+
+  <div class="week">
+    <div class="week-h">Semana 1 · 04–08 ago — Tintas MC <span>E-mail V9 em 06 ago</span></div>
+    <table class="ct"><thead><tr><th>Data</th><th>Dia</th><th>Canal</th><th>Tema</th><th>Tipo</th><th>Pauta</th><th>Status</th></tr></thead>
+    <tbody>
+      <tr><td class="td-inner"><span class="dc">04 ago</span></td><td class="td-inner"><span class="dy">Seg</span></td><td class="td-inner"><span class="bdg b-yt">YouTube</span></td><td class="td-inner"><span class="cdot cl-tintas"></span>Tintas MC</td><td class="td-inner"><span class="tp tp-case">Upload completo</span></td><td><div class="td-inner"><div class="pr">Tintas MC — vídeo completo</div><div class="sr">Upload + SEO. Cortes a definir após edição.</div><span class="status-w">Agosto</span></div></td><td class="td-inner"><span class="status-w">Agosto</span></td></tr>
+      <tr><td class="td-inner"><span class="dc">04 ago</span></td><td class="td-inner"><span class="dy">Seg</span></td><td class="td-inner"><span class="bdg b-li">LinkedIn</span></td><td class="td-inner"><span class="cdot cl-tintas"></span>Tintas MC · dados</td><td class="td-inner"><span class="tp tp-case">Corte A · dados</span></td><td><div class="td-inner"><div class="pr">Tintas MC — resultado em dados (a definir após edição)</div><div class="sr">Tom executivo. Antecede E-mail V9.</div><span class="status-w">A confirmar</span></div></td><td class="td-inner"><span class="status-w">A confirmar</span></td></tr>
+      <tr><td class="td-inner"><span class="dc">05 ago</span></td><td class="td-inner"><span class="dy">Ter</span></td><td class="td-inner"><span class="bdg b-ig">Instagram</span></td><td class="td-inner"><span class="cdot cl-tintas"></span>Tintas MC · emocional</td><td class="td-inner"><span class="tp tp-case">Corte B · emocional</span></td><td><div class="td-inner"><div class="pr">Tintas MC — narrativa emocional (a definir)</div><div class="sr">Frame do entrevistado.</div><span class="status-w">A confirmar</span></div></td><td class="td-inner"><span class="status-w">A confirmar</span></td></tr>
+      <tr><td class="td-inner"><span class="dc">05 ago</span></td><td class="td-inner"><span class="dy">Ter</span></td><td class="td-inner"><span class="bdg b-wake">Wake · LI+IG</span></td><td class="td-inner"><span class="cdot cl-tintas"></span>Tintas MC estático</td><td class="td-inner"><span class="tp tp-wake">Post estático</span></td><td><div class="td-inner"><div class="pr">Tintas MC — resultado em destaque (a confirmar)</div><div class="sr">Formato Wake.</div><span class="status-w">A confirmar</span></div></td><td class="td-inner"><span class="status-w">A confirmar</span></td></tr>
+      <tr><td class="td-inner"><span class="dc">06 ago</span></td><td class="td-inner"><span class="dy">Qua</span></td><td class="td-inner"><span class="bdg b-em">E-mail</span></td><td class="td-inner"><span class="cdot cl-inst"></span>Varejo</td><td class="td-inner"><span class="tp tp-inst">Disparo V9</span></td><td><div class="td-inner"><div class="pr">Disparo E-mail V9 · Conversão</div><div class="em-anchor">E-mail V9 · Conversão</div></div></td><td class="td-inner"><span class="status-r">Rascunho</span></td></tr>
+    </tbody></table>
+  </div>
+
+  <div class="week">
+    <div class="week-h">Semana 2 · 11–15 ago — Nagumo</div>
+    <table class="ct"><thead><tr><th>Data</th><th>Dia</th><th>Canal</th><th>Tema</th><th>Tipo</th><th>Pauta</th><th>Status</th></tr></thead>
+    <tbody>
+      <tr><td class="td-inner"><span class="dc">11 ago</span></td><td class="td-inner"><span class="dy">Seg</span></td><td class="td-inner"><span class="bdg b-yt">YouTube</span></td><td class="td-inner"><span class="cdot cl-nagumo"></span>Nagumo</td><td class="td-inner"><span class="tp tp-case">Upload completo</span></td><td><div class="td-inner"><div class="pr">Nagumo — vídeo completo</div><div class="sr">Upload + SEO. Cortes a definir após edição.</div><span class="status-w">Agosto</span></div></td><td class="td-inner"><span class="status-w">Agosto</span></td></tr>
+      <tr><td class="td-inner"><span class="dc">11 ago</span></td><td class="td-inner"><span class="dy">Seg</span></td><td class="td-inner"><span class="bdg b-li">LinkedIn</span></td><td class="td-inner"><span class="cdot cl-nagumo"></span>Nagumo · dados</td><td class="td-inner"><span class="tp tp-case">Corte A · dados</span></td><td><div class="td-inner"><div class="pr">Nagumo — resultado em dados (a definir)</div><div class="sr">Tom executivo.</div><span class="status-w">A confirmar</span></div></td><td class="td-inner"><span class="status-w">A confirmar</span></td></tr>
+      <tr><td class="td-inner"><span class="dc">12 ago</span></td><td class="td-inner"><span class="dy">Ter</span></td><td class="td-inner"><span class="bdg b-ig">Instagram</span></td><td class="td-inner"><span class="cdot cl-nagumo"></span>Nagumo · emocional</td><td class="td-inner"><span class="tp tp-case">Corte B · emocional</span></td><td><div class="td-inner"><div class="pr">Nagumo — narrativa emocional (a definir)</div><div class="sr">Frame do entrevistado.</div><span class="status-w">A confirmar</span></div></td><td class="td-inner"><span class="status-w">A confirmar</span></td></tr>
+      <tr><td class="td-inner"><span class="dc">12 ago</span></td><td class="td-inner"><span class="dy">Ter</span></td><td class="td-inner"><span class="bdg b-wake">Wake · LI+IG</span></td><td class="td-inner"><span class="cdot cl-nagumo"></span>Nagumo estático</td><td class="td-inner"><span class="tp tp-wake">Post estático</span></td><td><div class="td-inner"><div class="pr">Nagumo — resultado em destaque (a confirmar)</div><div class="sr">Formato Wake.</div><span class="status-w">A confirmar</span></div></td><td class="td-inner"><span class="status-w">A confirmar</span></td></tr>
+      <tr><td class="td-inner"><span class="dc">14 ago</span></td><td class="td-inner"><span class="dy">Qui</span></td><td class="td-inner"><span class="bdg b-li">LinkedIn</span></td><td class="td-inner"><span class="cdot cl-inst"></span>Institucional · P5</td><td class="td-inner"><span class="tp tp-inst">Post narrativo</span></td><td><div class="td-inner"><div class="pr">O que esse período nos deixou — encerramento em perspectiva</div><div class="sr">Síntese dos cases. Tom propositivo, 1ª pessoa do plural. Sem euforia.</div><span class="status-r">Rascunho</span></div></td><td class="td-inner"><span class="status-r">Rascunho</span></td></tr>
+    </tbody></table>
+  </div>
+
+  <div class="week">
+    <div class="week-h">Semana 3 · 18–22 ago — Encerramento da campanha intensiva <span>E-mails V10 + I8 em 21 ago</span></div>
+    <table class="ct"><thead><tr><th>Data</th><th>Dia</th><th>Canal</th><th>Tema</th><th>Tipo</th><th>Pauta</th><th>Status</th></tr></thead>
+    <tbody>
+      <tr>
+        <td class="td-inner"><span class="dc">19 ago</span></td><td class="td-inner"><span class="dy">Ter</span></td>
+        <td class="td-inner"><span class="bdg b-li">LinkedIn</span></td>
+        <td class="td-inner"><span class="cdot cl-inst"></span>Institucional · P1</td>
+        <td class="td-inner"><span class="tp tp-inst">Post longo</span></td>
+        <td>
+          <div class="td-inner">
+            <div class="pr">Marca, Margem, Fidelidade — o que ficou de Amicci Histórias</div>
+            <div class="sr">Síntese dos 10 cases. O que cada cliente provou sobre MDD. Tom de encerramento propositivo.</div>
+            <div class="post-toggle" onclick="togglePost(this)"><span class="ti">›</span> Copy + Brief</div>
+          </div>
+          <div class="post-body">
+            <div class="pb-inner">
+              <div>
+                <div class="cb-label">Legenda LinkedIn</div>
+                <div class="cb-copy">Nos últimos meses, a Amicci contou histórias.
+
+Cottonbaby. Carrefour. Sumirê. Temperola. Promofarma. Petz. Cremer. Zinho. Tintas MC. Nagumo.
+
+Redes de tamanhos muito diferentes. Categorias diferentes. Momentos de negócio diferentes.
+
+Mas o que atravessa todas essas histórias é o mesmo: marca própria não é produto alternativo. É posicionamento. É margem. É fidelidade. E é uma escolha estratégica que precisa de execução para existir.
+
+A campanha encerra aqui. A oportunidade não.
+
+Para qualquer varejista que quiser escrever a próxima história, o time está disponível.
+
+A Amicci executa tudo.</div>
+                <div class="cb-cta"><strong>CTA</strong>Fale com um especialista. Link na bio.</div>
+                <div class="status-r">Rascunho</div>
+              </div>
+              <div>
+                <div class="cb-label">Brief para o designer</div>
+                <div class="cb-brief">
+                  <div class="cb-brief-title">BRIEF — 19 ago · LinkedIn · Encerramento P1</div>
+                  <div class="bf"><span class="bfk">Formato</span><span class="bfv">Post único · 1200x628px</span></div>
+                  <div class="bf"><span class="bfk">Conceito</span><span class="bfv">Arte de encerramento institucional. Fundo escuro com os 10 logos dos clientes em grid discreto ao fundo.</span></div>
+                  <div class="bf"><span class="bfk">Headline na arte</span><span class="bfv"><span class="bfhl">Marca. Margem. Fidelidade.</span></span></div>
+                  <div class="bf"><span class="bfk">Texto de apoio</span><span class="bfv">10 histórias. Uma convicção.</span></div>
+                  <div class="bf-div"></div>
+                  <div class="bf"><span class="bfk">Fundo</span><span class="bfv">Escuro #002831. Grid de 10 logos de clientes em baixa opacidade (20–30%) ao fundo. Logo Amicci em destaque no centro ou canto.</span></div>
+                  <div class="bf"><span class="bfk">Turquesa</span><span class="bfv">Headline em turquesa ou linha decorativa turquesa separando headline e apoio.</span></div>
+                  <div class="bf"><span class="bfk">Obs</span><span class="bfk">Confirmar aprovação de uso de todos os logos antes de produção.</span></div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </td>
+        <td class="td-inner"><span class="status-r">Rascunho</span></td>
+      </tr>
+      <tr>
+        <td class="td-inner"><span class="dc">20 ago</span></td><td class="td-inner"><span class="dy">Qua</span></td>
+        <td class="td-inner"><span class="bdg b-liig">LI + IG</span></td>
+        <td class="td-inner"><span class="cdot cl-inst"></span>Encerramento</td>
+        <td class="td-inner"><span class="tp tp-wake">Post estático Wake</span></td>
+        <td>
+          <div class="td-inner">
+            <div class="pr">Pense Marca Própria — encerramento da campanha</div>
+            <div class="sr">Arte final. Fundo escuro. Símbolo Amicci. "Pense Marca Própria." Carrossel com os 10 logos dos clientes.</div>
+            <div class="post-toggle" onclick="togglePost(this)"><span class="ti">›</span> Copy + Brief</div>
+          </div>
+          <div class="post-body">
+            <div class="pb-inner">
+              <div>
+                <div class="cb-label">Legenda LI + IG</div>
+                <div class="cb-copy">Pense Marca Própria.
+
+#amiccihistórias #marcaprópria #amicci</div>
+                <div class="status-r">Rascunho</div>
+              </div>
+              <div>
+                <div class="cb-label">Brief para o designer</div>
+                <div class="cb-brief">
+                  <div class="cb-brief-title">BRIEF — 20 ago · LI + IG · Encerramento Wake</div>
+                  <div class="bf"><span class="bfk">Formato</span><span class="bfv">Carrossel: slide 1 = arte de encerramento · slides 2–11 = um logo de cliente por slide · 1080x1080px</span></div>
+                  <div class="bf"><span class="bfk">Slide 1</span><span class="bfv">Fundo escuro. Símbolo Amicci centrado. "Pense Marca Própria." em Roboto Bold branco. Turquesa mínima.</span></div>
+                  <div class="bf"><span class="bfk">Slides 2–11</span><span class="bfv">Um cliente por slide. Logo do cliente centrado. Nome do cliente em Roboto Bold branco abaixo. Fundo escuro uniforme. Logo Amicci pequeno no canto inferior.</span></div>
+                  <div class="bf"><span class="bfk">Ordem</span><span class="bfv">Cottonbaby → Carrefour → Sumirê → Temperola → Promofarma → Petz → Cremer → Zinho → Tintas MC → Nagumo</span></div>
+                  <div class="bf"><span class="bfk">Obs</span><span class="bfv">Confirmar aprovação de uso de todos os logos antes de produção. Versão para LinkedIn: 1200x628px para o post de capa + carrossel em quadrado.</span></div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </td>
+        <td class="td-inner"><span class="status-r">Rascunho</span></td>
+      </tr>
+      <tr><td class="td-inner"><span class="dc">21 ago</span></td><td class="td-inner"><span class="dy">Qui</span></td><td class="td-inner"><span class="bdg b-em">E-mail</span></td><td class="td-inner"><span class="cdot cl-inst"></span>Varejo + Indústria</td><td class="td-inner"><span class="tp tp-inst">Disparo duplo</span></td><td><div class="td-inner"><div class="pr">Disparo E-mail V10 + E-mail I8 · Encerramento</div><div class="em-anchor">E-mail V10 · Encerramento</div> <div class="em-anchor">E-mail I8 · Encerramento</div></div></td><td class="td-inner"><span class="status-r">Rascunho</span></td></tr>
+      <tr><td class="td-inner"><span class="dc">22 ago</span></td><td class="td-inner"><span class="dy">Sex</span></td><td class="td-inner"><span class="bdg b-ig">Instagram</span></td><td class="td-inner"><span class="cdot cl-inst"></span>Encerramento · P5</td><td class="td-inner"><span class="tp tp-inst">Post único</span></td><td><div class="td-inner"><div class="pr">Amicci Histórias — obrigado por acompanhar</div><div class="sr">Tom caloroso, próximo, sem euforia. Agradecimento à rede e aos clientes. Último post da campanha intensiva.</div><span class="status-r">Rascunho</span></div></td><td class="td-inner"><span class="status-r">Rascunho</span></td></tr>
+    </tbody></table>
+  </div>
+
+  <div class="info" style="margin-top:12px"><strong>Pós-campanha (a partir de 25 ago):</strong> Ritmo espaçado — 2 a 3 posts por semana. Institucional com dados e reposicionamento. Posts estáticos do Johnny começam a circular (cortes em formato estático, tom institucional). Abertura para novos cases quando confirmados.</div>
+</div>
+<!-- ═══ POSTS ESTÁTICOS ═══ -->
+<div id="estaticos" class="section">
+  <div class="info"><strong>Posts estáticos no estilo Wake Commerce:</strong> Camada adicional de distribuição — não substituem os cortes de vídeo. Publicados na semana do case correspondente. Formatados para compartilhamento e salvamento. Foco em dados, comparativos, resultados, frameworks e educação. Johnny entra neste canal após 22 ago.</div>
+
+  <div class="month-t">Cases — Carrosséis e estáticos de resultado</div>
+  <div class="wake-grid">
+    <div class="wcard"><div class="wcard-lbl">Cottonbaby · 19 jun</div><div class="wcard-t">"Fizemos a coisa certa" — decisão estratégica + Indux</div><div class="wcard-m">Post estático com citação do cliente em destaque. Contexto de resultado e decisão. Fundo escuro. Turquesa. Compartilhável.</div><div class="wcard-theme">Decisão estratégica</div></div>
+    <div class="wcard"><div class="wcard-lbl">Carrefour · 20 jun</div><div class="wcard-t">21% das vendas — o que esse número significa para o setor</div><div class="wcard-m">Post estático. Big number em destaque. Contexto de escala e método. Fundo escuro, turquesa. Compartilhável.</div><div class="wcard-theme">Escala e resultado</div></div>
+    <div class="wcard"><div class="wcard-lbl">Sumirê · 24 jun</div><div class="wcard-t">500 produtos — marcos da jornada com a Amicci</div><div class="wcard-m">Carrossel. Linha do tempo visual dos marcos. Fundo escuro alternado com fundo claro. Turquesa.</div><div class="wcard-theme">Jornada e crescimento</div></div>
+    <div class="wcard"><div class="wcard-lbl">Temperola · 26 jun</div><div class="wcard-t">De 10% para 40% — antes e depois em dados</div><div class="wcard-m">Post estático comparativo. Layout visual de antes/depois. Dado em turquesa grande. Fundo escuro.</div><div class="wcard-theme">Transformação financeira</div></div>
+    <div class="wcard"><div class="wcard-lbl">Promofarma · 08 jul</div><div class="wcard-t">Resultado Promofarma — dado principal em destaque</div><div class="wcard-m">A definir após receber temáticas da edição. Carrossel ou estático. Formato Wake.</div><div class="wcard-theme">A confirmar</div></div>
+    <div class="wcard"><div class="wcard-lbl">Petz · 15 jul</div><div class="wcard-t">Equipe dedicada a PL — como a Petz estruturou private label</div><div class="wcard-m">A definir após receber temáticas da edição. Carrossel de estrutura e resultado. Formato Wake.</div><div class="wcard-theme">A confirmar</div></div>
+    <div class="wcard"><div class="wcard-lbl">Cremer · 22 jul</div><div class="wcard-t">3 ingredientes para o sucesso da MDD — framework visual</div><div class="wcard-m">Carrossel 4 slides. 1 slide por ingrediente + slide de resultado. Ícone + micro-texto. Fundo escuro.</div><div class="wcard-theme">Framework de sucesso</div></div>
+    <div class="wcard"><div class="wcard-lbl">Zinho · 29 jul</div><div class="wcard-t">Impacto de MDD na Zinho — resultado em destaque</div><div class="wcard-m">A definir após receber temáticas da edição. Estático ou carrossel. Formato Wake.</div><div class="wcard-theme">A confirmar</div></div>
+    <div class="wcard"><div class="wcard-lbl">Tintas MC · 05 ago</div><div class="wcard-t">Tintas MC + Amicci — resultado em destaque</div><div class="wcard-m">A definir após edição agosto. Formato Wake.</div><div class="wcard-theme">A confirmar</div></div>
+    <div class="wcard"><div class="wcard-lbl">Nagumo · 12 ago</div><div class="wcard-t">Nagumo + Amicci — resultado em destaque</div><div class="wcard-m">A definir após edição agosto. Formato Wake.</div><div class="wcard-theme">A confirmar</div></div>
+    <div class="wcard"><div class="wcard-lbl">Encerramento · 20 ago</div><div class="wcard-t">Pense Marca Própria — carrossel com os 10 clientes</div><div class="wcard-m">Carrossel 11 slides. Slide 1 = "Pense Marca Própria." Slides 2–11 = um logo por cliente. Fundo escuro uniforme.</div><div class="wcard-theme">Encerramento de campanha</div></div>
+  </div>
+
+  <div class="month-t">Educativos — dados, reposicionamento e frameworks</div>
+  <div class="wake-grid">
+    <div class="wcard"><div class="wcard-lbl">Institucional · 12 jun</div><div class="wcard-t">Da ideia ao produto na gôndola — 6 etapas da plataforma Amicci</div><div class="wcard-m">Carrossel 6 slides. Cada slide = uma etapa com ícone e micro-texto. Fundo escuro, turquesa. Estilo Wake Commerce.</div><div class="wcard-theme">Solução · P3</div></div>
+    <div class="wcard"><div class="wcard-lbl">dunnhumby · 27 jun</div><div class="wcard-t">5 maneiras de maximizar MDD na lealdade do cliente</div><div class="wcard-m">Carrossel 6 slides. Slide de capa + 5 alavancas. Fonte: dunnhumby RPI Brasil 2026 obrigatória na capa. Fundo escuro.</div><div class="wcard-theme">Dados · P2</div></div>
+    <div class="wcard"><div class="wcard-lbl">Institucional · 17 jul</div><div class="wcard-t">3 alavancas de crescimento em MDD sem novos SKUs</div><div class="wcard-m">Carrossel 4 slides. 3 alavancas + slide de CTA. Ícones + micro-texto. Fundo escuro, turquesa.</div><div class="wcard-theme">Educativo · P3</div></div>
+    <div class="wcard"><div class="wcard-lbl">Artigo Sá · 30 jun</div><div class="wcard-t">O que mais dá errado na MDD no Brasil — 6 erros comuns</div><div class="wcard-m">Carrossel 5 slides. 6 erros em formato visual. Cada erro = ícone + nome + micro-contexto. Fundo escuro.</div><div class="wcard-theme">Reposicionamento · P1</div></div>
+    <div class="wcard"><div class="wcard-lbl">Encerramento · 19 ago</div><div class="wcard-t">Marca, Margem, Fidelidade — síntese de Amicci Histórias</div><div class="wcard-m">Post estático. Os 10 logos de clientes ao fundo em baixa opacidade. Headline "Marca. Margem. Fidelidade." em turquesa.</div><div class="wcard-theme">Encerramento · P4</div></div>
+    <div class="wcard"><div class="wcard-lbl">Johnny · pós-22 ago</div><div class="wcard-t">Cortes do fundador em formato estático — série a definir</div><div class="wcard-m">Após encerramento da campanha intensiva. Frases e insights do fundador em cards estáticos. Tom institucional. Cadência 1–2x por semana.</div><div class="wcard-theme">Pós-campanha · P3</div></div>
+  </div>
+</div>
+
+<!-- ═══ E-MAIL VAREJO ═══ -->
+<div id="ev" class="section">
+  <div class="info"><strong>Régua Varejo — Wishlist + Segmentação:</strong> 10 e-mails de 04 jun a 21 ago. Público: varejistas (donos de redes, diretores comerciais, category managers). Tom direto e propositivo — começa sempre pelo problema do varejista. Ferramenta: HubSpot. Intervalo: 7–10 dias. Horário: terça a quinta, 9h–11h. Cortes nas redes antecedem cada e-mail em 2–3 dias. Os E-mails 1 e 2 (04 e 11 jun) fazem parte do aquecimento pré-lançamento.</div>
+
+  <div class="email-ph">Fase 1 — Aquecimento · E-mails V1 e V2 <span>04 e 11 jun</span></div>
+
+  <div class="ecard">
+    <div class="ecard-h" onclick="tE(this)">
+      <div style="flex:1"><div class="ec-n">E-mail V1 · 04 jun · Aquecimento</div><div class="ec-title">Você está entre os varejistas que entenderam antes dos outros.</div><div class="ec-meta"><span class="ftag f1">Fase 1</span> Boas-vindas + educativo · Disparo imediato ao cadastro wishlist</div></div>
+      <span class="ticon">›</span>
+    </div>
+    <div class="ecard-body">
+      <div class="ef-label">Assunto</div><div class="ef-sub">Você está entre os varejistas que entenderam antes dos outros.</div>
+      <div class="ef-label">Preview text</div><div class="ef-pre">92% das maiores redes já usam marca própria como estratégia. Você chegou no momento certo.</div>
+      <div class="ef-label">Corpo</div>
+      <div class="ef-body">Olá, [Nome].
+
+92% das maiores redes supermercadistas do Brasil já usam marca própria como estratégia de negócio, segundo a ABRAS. Esse número não é coincidência — é o resultado de um mercado que entendeu que negociar margem com fornecedor tem teto, e que construir produto próprio não tem.
+
+Você chegou à Amicci porque sabe que essa oportunidade existe. Nos próximos dias, vamos mostrar como ela funciona na prática: com método, com estrutura e com uma rede de mais de 2.300 indústrias prontas para desenvolver o produto certo para o seu varejo.
+
+Vamos te enviar conteúdos que mostram como varejistas como você transformaram marca própria em receita real. Sem promessa genérica. Só o que funciona.
+
+Se quiser começar antes, o time está disponível para uma conversa.</div>
+      <div class="ef-label">CTA</div><span class="cta-pill">Fale com um especialista</span>
+    </div>
+  </div>
+
+  <div class="ecard">
+    <div class="ecard-h" onclick="tE(this)">
+      <div style="flex:1"><div class="ec-n">E-mail V2 · 11 jun · Aquecimento</div><div class="ec-title">Qual produto? Qual fornecedor? Quanto tempo leva? Essas perguntas travaram varejistas por tempo demais.</div><div class="ec-meta"><span class="ftag f1">Fase 1</span> Remoção de objeção · Execução como solução</div></div>
+      <span class="ticon">›</span>
+    </div>
+    <div class="ecard-body">
+      <div class="ef-label">Assunto</div><div class="ef-sub">Qual produto? Qual fornecedor? Quanto tempo leva? Essas perguntas travaram varejistas por tempo demais.</div>
+      <div class="ef-label">Preview text</div><div class="ef-pre">O problema não é a estratégia. É a execução. Veja como a Amicci resolve isso.</div>
+      <div class="ef-label">Corpo</div>
+      <div class="ef-body">Olá, [Nome].
+
+"Qual produto lançar? Quem produz? Como garantir qualidade? Por quanto vender?" Essas perguntas travam varejistas de todos os tamanhos — não porque a estratégia esteja errada, mas porque a execução está fora do alcance da maioria.
+
+Montar um time interno para isso custa tempo e dinheiro que a operação raramente tem. Contratar agência por fora cria dependência sem controle. E tentar sozinho sem método transforma uma boa ideia em um projeto que nunca sai do papel.
+
+A Amicci foi construída para resolver exatamente esse ponto cego: estruturar a execução completa de marca própria, do sourcing até o acompanhamento de performance em gôndola. Com mais de 10.500 SKUs sob gestão e uma rede de mais de 2.300 indústrias certificadas, a plataforma entrega o que um time interno levaria anos para construir.
+
+Marca própria feita simples. Quando você quiser começar, a gente está aqui.</div>
+      <div class="ef-label">CTA</div><span class="cta-pill">Conheça a plataforma</span>
+    </div>
+  </div>
+
+  <div class="email-ph">Fase 2 — Lançamento e nutrição · E-mails V3 a V5 <span>18 jun · 25 jun · 02 jul</span></div>
+
+  <div class="ecard">
+    <div class="ecard-h" onclick="tE(this)">
+      <div style="flex:1"><div class="ec-n">E-mail V3 · 18 jun · Lançamento</div><div class="ec-title">Hoje você vai conhecer quem já transformou marca própria em vantagem real.</div><div class="ec-meta"><span class="ftag f2">Fase 2</span> Lançamento Amicci Histórias · 3 cases no YouTube</div></div>
+      <span class="ticon">›</span>
+    </div>
+    <div class="ecard-body">
+      <div class="ef-label">Assunto</div><div class="ef-sub">Hoje você vai conhecer quem já transformou marca própria em vantagem real.</div>
+      <div class="ef-label">Preview text</div><div class="ef-pre">Cottonbaby, Carrefour, Sumirê. Histórias reais. Números reais.</div>
+      <div class="ef-label">Corpo</div>
+      <div class="ef-body">Olá, [Nome].
+
+Nas últimas semanas, a gente te mostrou o mercado, os números e a estrutura que torna marca própria possível para qualquer varejista que decida encarar o processo com método.
+
+Hoje é diferente. Hoje você vai ver o que acontece quando tudo isso vira realidade.
+
+Amicci Histórias é a série de cases que documenta o que varejistas reais fizeram com a plataforma. Sem slides bonitos, sem promessa. Só o que foi construído, o que foi superado e o que ficou de resultado.
+
+Cottonbaby, Carrefour e Sumirê abrem a série. Outros virão nas próximas semanas.
+
+Os vídeos estão no canal da Amicci no YouTube. Os três primeiros já estão disponíveis agora.</div>
+      <div class="ef-label">CTA</div><span class="cta-pill">Ver os cases agora</span>
+      <div class="anchor">Cortes Carrefour (LI, 16 jun) e Sumirê (IG, 17 jun) antecedem este disparo em 2 dias.</div>
+    </div>
+  </div>
+
+  <div class="ecard">
+    <div class="ecard-h" onclick="tE(this)">
+      <div style="flex:1"><div class="ec-n">E-mail V4 · 25 jun · Nutrição</div><div class="ec-title">Boa ideia de produto. Zero verba para tirar do papel. E agora?</div><div class="ec-meta"><span class="ftag f2">Fase 2</span> Crédito · ancora Temperola</div></div>
+      <span class="ticon">›</span>
+    </div>
+    <div class="ecard-body">
+      <div class="ef-label">Assunto</div><div class="ef-sub">Boa ideia de produto. Zero verba para tirar do papel. E agora?</div>
+      <div class="ef-label">Preview text</div><div class="ef-pre">Esse é o ponto onde a maioria para. A Temperola não parou. Veja o que mudou.</div>
+      <div class="ef-label">Corpo</div>
+      <div class="ef-body">Olá, [Nome].
+
+Essa é a situação que mais trava varejistas com potencial real para marca própria: a estratégia faz sentido, o produto está mapeado, o mercado está pronto — mas o capital para viabilizar o desenvolvimento não está na mesa.
+
+A Temperola conheceu esse ponto de parada. E decidiu não parar.
+
+Com a Amicci, o faturamento de marcas próprias subiu de 10% para 40% de toda a receita da Temperola. Parte dessa virada passou pela estrutura de crédito que a Amicci oferece para clientes da plataforma — pensada exatamente para o momento em que a operação precisa de fôlego para crescer.
+
+Se capital é o que está travando o próximo passo da sua operação de marca própria, vale uma conversa de 30 minutos para entender o que está disponível para o seu perfil.</div>
+      <div class="ef-label">CTA</div><span class="cta-pill">Quero entender como funciona o crédito</span>
+      <div class="anchor">Cortes Temperola (LI 23 jun, IG 24 jun) antecedem em 2 dias.</div>
+    </div>
+  </div>
+
+  <div class="ecard">
+    <div class="ecard-h" onclick="tE(this)">
+      <div style="flex:1"><div class="ec-n">E-mail V5 · 02 jul · Educativo</div><div class="ec-title">IA + marca própria: o que realmente funciona (e o que ainda é hype).</div><div class="ec-meta"><span class="ftag f2">Fase 2</span> Conteúdo de valor · Amy · tecnologia</div></div>
+      <span class="ticon">›</span>
+    </div>
+    <div class="ecard-body">
+      <div class="ef-label">Assunto</div><div class="ef-sub">IA + marca própria: o que realmente funciona (e o que ainda é hype).</div>
+      <div class="ef-label">Preview text</div><div class="ef-pre">Todo mundo está falando em IA. Poucos estão usando certo no contexto de private label.</div>
+      <div class="ef-label">Corpo</div>
+      <div class="ef-body">Olá, [Nome].
+
+IA entrou na conversa de todo setor. No varejo e no desenvolvimento de marca própria, ela já tem aplicações concretas — e também tem muito barulho sem resultado.
+
+O que funciona hoje: análise de tendência de consumo para identificar oportunidades de produto, geração de direcionais de embalagem com base em pesquisa de mercado, e acompanhamento de performance em gôndola com mais velocidade de resposta.
+
+O que ainda é promessa: substituição completa do processo de sourcing, desenvolvimento autônomo de produto sem validação humana, e previsão de demanda com precisão suficiente para tomada de decisão de lançamento.
+
+A Amicci incorporou IA no processo de geração de direcionais de embalagem com a Amy — uma ferramenta que acelera uma etapa que antes levava semanas. É um uso concreto, com resultado mensurável, dentro de um processo maior que ainda depende de método e de pessoas.
+
+Se quiser ver como isso funciona na prática, o time pode mostrar em uma demonstração.</div>
+      <div class="ef-label">CTA</div><span class="cta-pill">Ver uma demonstração da plataforma</span>
+    </div>
+  </div>
+
+  <div class="email-ph">Fase 3 — Cases em profundidade · E-mails V6, V7, V8 <span>09 jul · 16 jul · 23 jul</span></div>
+
+  <div class="ecard">
+    <div class="ecard-h" onclick="tE(this)">
+      <div style="flex:1"><div class="ec-n">E-mail V6 · 09 jul · Case</div><div class="ec-title">Promofarma: o que acontece quando a execução está certa.</div><div class="ec-meta"><span class="ftag f3">Fase 3</span> ancora Promofarma</div></div>
+      <span class="ticon">›</span>
+    </div>
+    <div class="ecard-body">
+      <div class="ef-label">Assunto</div><div class="ef-sub">Promofarma: o que acontece quando a execução está certa.</div>
+      <div class="ef-label">Preview text</div><div class="ef-pre">Não é sobre ter o produto perfeito. É sobre ter a estrutura de execução certa do lado.</div>
+      <div class="ef-label">Corpo</div>
+      <div class="ef-body">Olá, [Nome].
+
+A Promofarma chegou à Amicci com uma convicção clara: marca própria era a alavanca de margem que faltava na operação. O que faltava era uma plataforma que garantisse execução com qualidade, velocidade e controle de ponta a ponta — não só um intermediário de fornecedor.
+
+O resultado da parceria está nos produtos que a Promofarma tem hoje: com identidade, com padrão de qualidade e com uma relação com o consumidor que nenhuma marca de indústria consegue replicar.
+
+O vídeo completo do case está no YouTube. Vale o tempo.</div>
+      <div class="ef-label">CTA</div><span class="cta-pill">Ver o case completo</span>
+      <div class="anchor">Cortes Promofarma (LI 07 jul, IG 08 jul) antecedem em 2 dias.</div>
+    </div>
+  </div>
+
+  <div class="ecard">
+    <div class="ecard-h" onclick="tE(this)">
+      <div style="flex:1"><div class="ec-n">E-mail V7 · 16 jul · Case</div><div class="ec-title">Petz, ZeeDog e a equipe dedicada a private label que mudou tudo.</div><div class="ec-meta"><span class="ftag f3">Fase 3</span> ancora Petz</div></div>
+      <span class="ticon">›</span>
+    </div>
+    <div class="ecard-body">
+      <div class="ef-label">Assunto</div><div class="ef-sub">A grande sacada do Sá: compartilhar uma equipe especializada em private label.</div>
+      <div class="ef-label">Preview text</div><div class="ef-pre">Quando a Petz adquiriu a ZeeDog, o desafio de marca própria ficou mais complexo. A solução foi elegante.</div>
+      <div class="ef-label">Corpo</div>
+      <div class="ef-body">Olá, [Nome].
+
+Quando a Petz adquiriu a ZeeDog, o desafio de marca própria ficou mais complexo: duas marcas, dois perfis de consumidor, uma operação que precisava crescer em private label sem perder coerência.
+
+A solução foi estruturar uma equipe dedicada a pensar private label no varejo, com a Amicci como plataforma de execução. Não uma consultoria. Uma estrutura de operação compartilhada que entrega produto, qualidade e velocidade — sem que a Petz precise construir tudo internamente.
+
+O case completo está no YouTube.</div>
+      <div class="ef-label">CTA</div><span class="cta-pill">Ver o case completo</span>
+      <div class="anchor">Cortes Petz (LI 14 jul, IG 15 jul) antecedem em 2 dias.</div>
+    </div>
+  </div>
+
+  <div class="ecard">
+    <div class="ecard-h" onclick="tE(this)">
+      <div style="flex:1"><div class="ec-n">E-mail V8 · 23 jul · Case</div><div class="ec-title">3 ingredientes para o sucesso de marca própria — o que a Cremer descobriu.</div><div class="ec-meta"><span class="ftag f3">Fase 3</span> ancora Cremer</div></div>
+      <span class="ticon">›</span>
+    </div>
+    <div class="ecard-body">
+      <div class="ef-label">Assunto</div><div class="ef-sub">3 ingredientes para o sucesso de marca própria. A Cremer testou. Funcionou.</div>
+      <div class="ef-label">Preview text</div><div class="ef-pre">Não é uma fórmula. É um método. E a Cremer prova isso.</div>
+      <div class="ef-label">Corpo</div>
+      <div class="ef-body">Olá, [Nome].
+
+A Cremer tem uma visão clara sobre o que faz uma operação de marca própria funcionar: produto certo, fornecedor certo e parceria certa. Três ingredientes que parecem simples — e que a maioria das redes erra em pelo menos um.
+
+Com a Amicci, a Cremer estruturou os três de forma integrada. O resultado é uma operação de MDD com padrão, com governança e com crescimento sustentável.
+
+O vídeo completo está no YouTube. E o framework dos 3 ingredientes vale para qualquer varejista que queira começar ou profissionalizar a operação de marca própria.</div>
+      <div class="ef-label">CTA</div><span class="cta-pill">Ver o case e o framework</span>
+      <div class="anchor">Cortes Cremer (LI 21 jul, IG 22 jul) antecedem em 2 dias.</div>
+    </div>
+  </div>
+
+  <div class="email-ph">Fase 4 — Conversão · E-mails V9 e V10 <span>06 ago · 21 ago</span></div>
+
+  <div class="ecard">
+    <div class="ecard-h" onclick="tE(this)">
+      <div style="flex:1"><div class="ec-n">E-mail V9 · 06 ago · Conversão</div><div class="ec-title">Você já sabe o que marca própria pode fazer. A pergunta agora é outra.</div><div class="ec-meta"><span class="ftag f4">Fase 4</span> CTA direto · conversa com especialista</div></div>
+      <span class="ticon">›</span>
+    </div>
+    <div class="ecard-body">
+      <div class="ef-label">Assunto</div><div class="ef-sub">Você já sabe o que marca própria pode fazer. A pergunta agora é outra.</div>
+      <div class="ef-label">Preview text</div><div class="ef-pre">O que está impedindo a sua operação de chegar lá? A gente quer descobrir isso junto com você.</div>
+      <div class="ef-label">Corpo</div>
+      <div class="ef-body">Olá, [Nome].
+
+Você acompanhou os cases. Viu os números. Entendeu o modelo.
+
+Nesse ponto, a pergunta que importa não é mais "marca própria funciona?" — você já tem a resposta. A pergunta é: o que está impedindo a sua operação de dar o próximo passo?
+
+Pode ser capital. Pode ser a dificuldade de encontrar o fornecedor certo para a categoria que você quer entrar. Pode ser a falta de clareza sobre por onde começar sem comprometer a operação principal.
+
+Essas são exatamente as perguntas que uma conversa de 30 minutos com um especialista da Amicci consegue responder. Sem apresentação longa, sem compromisso, sem pressão de venda. Só o diagnóstico honesto do que faz sentido para o seu perfil — e o que não faz.
+
+Quando você quiser dar esse passo, o link abaixo abre um espaço na agenda do time.</div>
+      <div class="ef-label">CTA</div><span class="cta-pill">Agendar conversa com especialista</span>
+    </div>
+  </div>
+
+  <div class="ecard">
+    <div class="ecard-h" onclick="tE(this)">
+      <div style="flex:1"><div class="ec-n">E-mail V10 · 21 ago · Encerramento</div><div class="ec-title">Essa campanha termina em breve. Mas a oportunidade não precisa.</div><div class="ec-meta"><span class="ftag f4">Fase 4</span> Urgência suave · último disparo da campanha</div></div>
+      <span class="ticon">›</span>
+    </div>
+    <div class="ecard-body">
+      <div class="ef-label">Assunto</div><div class="ef-sub">Essa campanha termina em breve. Mas a oportunidade não precisa.</div>
+      <div class="ef-label">Preview text</div><div class="ef-pre">Você quer ser o próximo case de sucesso? A equipe está disponível.</div>
+      <div class="ef-label">Corpo</div>
+      <div class="ef-body">Olá, [Nome].
+
+Nos últimos meses, você acompanhou como Cottonbaby, Carrefour, Sumirê, Temperola, Promofarma, Petz, Cremer, Zinho, Tintas MC e Nagumo transformaram marca própria em resultado real.
+
+Redes de tamanhos muito diferentes. Categorias diferentes. Momentos de negócio diferentes. Mas com uma coisa em comum: nenhuma delas esperou ter tudo perfeito para começar.
+
+Essa campanha encerra aqui. Mas o time da Amicci continua disponível — e a oportunidade que você acompanhou ao longo dessas semanas continua real para qualquer varejista que decida estruturar a execução do jeito certo.
+
+Quando você estiver pronto, o link está aqui.</div>
+      <div class="ef-label">CTA</div><span class="cta-pill">Quero começar agora</span>
+      <div class="nota" style="margin-top:6px">Para leads que não abriram V9 e V10: testar assunto alternativo "Antes de encerrar — uma última conversa?" para reengajamento 3 dias antes do disparo final.</div>
+    </div>
+  </div>
+</div>
+
+<!-- ═══ E-MAIL INDÚSTRIA ═══ -->
+<div id="ei" class="section">
+  <div class="info"><strong>Régua Indústria — Segmentação separada:</strong> 8 e-mails de 04 jun a 21 ago. Público: fornecedores e indústrias que querem se conectar ao varejo via Amicci. Tom completamente diferente do varejo — o argumento é de acesso à rede qualificada, certificação e co-criação com varejistas. Ferramenta: HubSpot. A régua de indústria fala para quem quer produzir, não para quem quer comprar.</div>
+
+  <div class="email-ph">Fase 1 — Apresentação · E-mails I1 e I2 <span>04 e 11 jun</span></div>
+
+  <div class="ecard">
+    <div class="ecard-h" onclick="tE(this)">
+      <div style="flex:1"><div class="ec-n">E-mail I1 · 04 jun · Apresentação</div><div class="ec-title">A Amicci conecta a sua indústria aos varejistas que mais crescem em marca própria.</div><div class="ec-meta"><span class="ftag f1">Fase 1</span> Proposta de valor para indústria · acesso à rede</div></div>
+      <span class="ticon">›</span>
+    </div>
+    <div class="ecard-body">
+      <div class="ef-label">Assunto</div><div class="ef-sub">A Amicci conecta a sua indústria aos varejistas que mais crescem em marca própria.</div>
+      <div class="ef-label">Preview text</div><div class="ef-pre">Mais de 2.300 indústrias certificadas. Varejistas como Carrefour, Petz e Sumirê. Uma plataforma que conecta os dois.</div>
+      <div class="ef-label">Corpo</div>
+      <div class="ef-body">Olá, [Nome].
+
+O varejo brasileiro está investindo mais em marca própria do que nunca. 92% das maiores redes já usam MDD como estratégia — e esse número cresce a cada ciclo.
+
+O desafio, para muitas indústrias, é chegar até esses varejistas de forma estruturada: com briefing claro, com processo de qualidade definido e com relacionamento que gera volume recorrente, não pedido avulso.
+
+A Amicci é a plataforma que estrutura essa conexão dos dois lados. Para os varejistas, entrega execução completa de marca própria. Para as indústrias, entrega acesso a uma rede qualificada de varejistas com demanda real, processo claro e avaliação técnica que garante que a parceria seja sustentável para os dois.
+
+Com mais de 10.500 SKUs sob gestão, sua indústria pode estar produzindo para as marcas próprias mais relevantes do Brasil.</div>
+      <div class="ef-label">CTA</div><span class="cta-pill">Quero fazer parte da rede Amicci</span>
+    </div>
+  </div>
+
+  <div class="ecard">
+    <div class="ecard-h" onclick="tE(this)">
+      <div style="flex:1"><div class="ec-n">E-mail I2 · 11 jun · Educativo</div><div class="ec-title">O que separa uma indústria que só fornece de uma que co-cria marca.</div><div class="ec-meta"><span class="ftag f1">Fase 1</span> Posicionamento · certificação · co-criação</div></div>
+      <span class="ticon">›</span>
+    </div>
+    <div class="ecard-body">
+      <div class="ef-label">Assunto</div><div class="ef-sub">O que separa uma indústria que só fornece de uma que co-cria marca.</div>
+      <div class="ef-label">Preview text</div><div class="ef-pre">O varejista de alta performance não quer só produto. Quer parceria. Saiba o que isso significa na prática.</div>
+      <div class="ef-label">Corpo</div>
+      <div class="ef-body">Olá, [Nome].
+
+Existe uma diferença significativa entre fornecer produto para um varejista e co-criar uma marca com ele.
+
+Quando a indústria apenas fornece, ela compete por preço. Quando ela co-cria — com identidade, com briefing, com validação técnica e com acompanhamento de desempenho — ela constrói uma relação de longo prazo que gera volume previsível e relacionamento estratégico.
+
+Os varejistas que a Amicci atende estão buscando o segundo perfil. As indústrias certificadas pela plataforma têm acesso preferencial a esses projetos — com processo estruturado, com clareza de escopo e com avaliação técnica que filtra o que faz sentido para ambos.
+
+A certificação não é um obstáculo. É o que garante que a parceria funcione.</div>
+      <div class="ef-label">CTA</div><span class="cta-pill">Saiba como funciona a certificação</span>
+    </div>
+  </div>
+
+  <div class="email-ph">Fase 2 — Lançamento e cases · E-mails I3 e I4 <span>18 e 25 jun</span></div>
+
+  <div class="ecard">
+    <div class="ecard-h" onclick="tE(this)">
+      <div style="flex:1"><div class="ec-n">E-mail I3 · 18 jun · Lançamento</div><div class="ec-title">Hoje a Amicci lança as histórias dos varejistas que executaram com a rede certa.</div><div class="ec-meta"><span class="ftag f2">Fase 2</span> Lançamento Amicci Histórias · visão da indústria</div></div>
+      <span class="ticon">›</span>
+    </div>
+    <div class="ecard-body">
+      <div class="ef-label">Assunto</div><div class="ef-sub">Hoje a Amicci lança as histórias dos varejistas que executaram com a rede certa.</div>
+      <div class="ef-label">Preview text</div><div class="ef-pre">Carrefour, Sumirê, Cottonbaby. Por trás de cada história, uma indústria que fez a diferença.</div>
+      <div class="ef-label">Corpo</div>
+      <div class="ef-body">Olá, [Nome].
+
+Lançamos hoje Amicci Histórias — a série de cases que documenta o que varejistas reais construíram com a plataforma.
+
+Por trás de cada caso de sucesso, há uma indústria que entregou o produto certo, no prazo certo, com o padrão de qualidade certo. É esse elo que a Amicci estrutura — e é por isso que as indústrias que fazem parte da nossa rede participam de projetos com os varejistas mais relevantes do Brasil.
+
+Carrefour, Sumirê, Cottonbaby. Três histórias, três formas diferentes de construir marca própria. E em todas elas, uma rede de fornecedores qualificados que fez a diferença.
+
+Assista aos cases no YouTube — e veja de que lado da história você quer estar.</div>
+      <div class="ef-label">CTA</div><span class="cta-pill">Ver os cases agora</span>
+    </div>
+  </div>
+
+  <div class="ecard">
+    <div class="ecard-h" onclick="tE(this)">
+      <div style="flex:1"><div class="ec-n">E-mail I4 · 25 jun · Educativo</div><div class="ec-title">O varejista que chegou até vocês precisava de mais do que produto.</div><div class="ec-meta"><span class="ftag f2">Fase 2</span> ancora Temperola · visão da indústria</div></div>
+      <span class="ticon">›</span>
+    </div>
+    <div class="ecard-body">
+      <div class="ef-label">Assunto</div><div class="ef-sub">O varejista que chegou até vocês precisava de mais do que produto.</div>
+      <div class="ef-label">Preview text</div><div class="ef-pre">Quando o varejista tem ideia mas não tem capital, a parceria certa muda tudo. Veja o case Temperola.</div>
+      <div class="ef-label">Corpo</div>
+      <div class="ef-body">Olá, [Nome].
+
+A Temperola sabia qual produto queria desenvolver. Sabia para qual consumidor. Sabia o que esperava em termos de qualidade e embalagem.
+
+O que faltava era capital para viabilizar o desenvolvimento — e uma indústria que estivesse disposta a construir junto, não apenas fornecer.
+
+Com a Amicci, esse encontro aconteceu de forma estruturada. O resultado foi uma relação de longo prazo com um varejista em crescimento acelerado — e o faturamento de MDD da Temperola passando de 10% para 40% da receita total.
+
+Para a indústria que participou desse processo, o resultado foi volume previsível e relacionamento estratégico. É esse tipo de parceria que a Amicci viabiliza — dos dois lados.</div>
+      <div class="ef-label">CTA</div><span class="cta-pill">Quero fazer parte da rede</span>
+    </div>
+  </div>
+
+  <div class="email-ph">Fase 3 e 4 — Cases e conversão · E-mails I5 a I8 <span>02 jul · 09 jul · 16 jul · 21 ago</span></div>
+
+  <div class="ecard">
+    <div class="ecard-h" onclick="tE(this)">
+      <div style="flex:1"><div class="ec-n">E-mail I5 · 02 jul · Dado</div><div class="ec-title">O que os melhores varejistas do mundo têm em comum com a sua indústria.</div><div class="ec-meta"><span class="ftag f3">Fase 3</span> dunnhumby RPI 2026 · crescimento compartilhado</div></div>
+      <span class="ticon">›</span>
+    </div>
+    <div class="ecard-body">
+      <div class="ef-label">Assunto</div><div class="ef-sub">O que os melhores varejistas do mundo têm em comum com a sua indústria.</div>
+      <div class="ef-label">Preview text</div><div class="ef-pre">Varejistas com MDD de qualidade crescem 4x a 10x mais. E as indústrias por trás disso também.</div>
+      <div class="ef-label">Corpo</div>
+      <div class="ef-body">Olá, [Nome].
+
+O Retail Preference Index da dunnhumby aponta algo claro: portfólios de marca própria de alta qualidade estão associados a um crescimento 4x a 10x maior nas vendas do varejo em geral.
+
+Isso não é só bom para o varejista. Quando o varejista cresce em MDD com qualidade, ele aumenta o volume com fornecedores confiáveis, fideliza o relacionamento e abre espaço para novos projetos — com mais previsibilidade e menos risco dos dois lados.
+
+A Amicci conecta os dois. As indústrias da rede participam desse crescimento de forma estruturada.
+
+Fonte: dunnhumby RPI Brasil 2026 (APAS Show)</div>
+      <div class="ef-label">CTA</div><span class="cta-pill">Conhecer a rede de indústrias Amicci</span>
+    </div>
+  </div>
+
+  <div class="ecard">
+    <div class="ecard-h" onclick="tE(this)">
+      <div style="flex:1"><div class="ec-n">E-mail I6 · 09 jul · Case</div><div class="ec-title">Promofarma: quando indústria e varejo estão alinhados, os dois crescem.</div><div class="ec-meta"><span class="ftag f3">Fase 3</span> ancora Promofarma · visão da indústria</div></div>
+      <span class="ticon">›</span>
+    </div>
+    <div class="ecard-body">
+      <div class="ef-label">Assunto</div><div class="ef-sub">Promofarma: o que acontece quando indústria e varejo estão alinhados.</div>
+      <div class="ef-label">Corpo</div>
+      <div class="ef-body">Olá, [Nome].
+
+A Promofarma chegou à Amicci com expectativa clara: qualidade, velocidade e processo — não só um intermediário de fornecedor.
+
+O resultado passa pelas indústrias da rede Amicci. Indústrias avaliadas tecnicamente, que entendem o briefing de marca própria e que entregam com o padrão que o varejista precisa para construir uma marca que o consumidor vai preferir.
+
+Se a sua indústria tem capacidade técnica e quer estar nesse movimento, a certificação Amicci é o próximo passo.</div>
+      <div class="ef-label">CTA</div><span class="cta-pill">Iniciar certificação</span>
+    </div>
+  </div>
+
+  <div class="ecard">
+    <div class="ecard-h" onclick="tE(this)">
+      <div style="flex:1"><div class="ec-n">E-mail I7 · 16 jul · Case</div><div class="ec-title">Quando a indústria encontra o varejo certo, as duas crescem juntas.</div><div class="ec-meta"><span class="ftag f3">Fase 3</span> ancora Petz · acesso preferencial</div></div>
+      <span class="ticon">›</span>
+    </div>
+    <div class="ecard-body">
+      <div class="ef-label">Assunto</div><div class="ef-sub">Quando a indústria encontra o varejo certo, as duas crescem.</div>
+      <div class="ef-label">Corpo</div>
+      <div class="ef-body">Olá, [Nome].
+
+Quando a Petz estruturou uma equipe dedicada a pensar private label, ela não saiu procurando fornecedor no mercado aberto. Usou a rede da Amicci — indústrias certificadas, com processo conhecido e qualidade validada.
+
+Para as indústrias da rede, esse tipo de acesso é o diferencial. Não é preciso competir por atenção em um processo longo de qualificação. O relacionamento já existe e o varejista já sabe que pode confiar.
+
+Se a sua indústria ainda não faz parte da rede, esse pode ser o momento de entender como funciona.</div>
+      <div class="ef-label">CTA</div><span class="cta-pill">Quero fazer parte da rede</span>
+    </div>
+  </div>
+
+  <div class="ecard">
+    <div class="ecard-h" onclick="tE(this)">
+      <div style="flex:1"><div class="ec-n">E-mail I8 · 21 ago · Encerramento</div><div class="ec-title">Essa campanha encerra. Mas a rede continua crescendo.</div><div class="ec-meta"><span class="ftag f4">Fase 4</span> CTA final para indústria · certificação</div></div>
+      <span class="ticon">›</span>
+    </div>
+    <div class="ecard-body">
+      <div class="ef-label">Assunto</div><div class="ef-sub">Essa campanha encerra. Mas a rede continua crescendo.</div>
+      <div class="ef-label">Preview text</div><div class="ef-pre">Os varejistas que você viu aqui continuam desenvolvendo marca própria. Sua indústria pode estar do lado deles.</div>
+      <div class="ef-label">Corpo</div>
+      <div class="ef-body">Olá, [Nome].
+
+Ao longo dos últimos meses, você acompanhou casos de Carrefour, Sumirê, Cottonbaby, Temperola, Promofarma, Petz, Cremer, Zinho, Tintas MC e Nagumo.
+
+Esses varejistas não pararam de desenvolver marca própria depois dos cases. Eles continuam — com novos produtos, novas categorias, novos projetos. E as indústrias da rede Amicci continuam tendo acesso a esses projetos de forma estruturada.
+
+Se a sua indústria ainda não faz parte da rede, esse é o momento de mudar isso. A certificação é o primeiro passo — e o time está disponível para guiar o processo.</div>
+      <div class="ef-label">CTA</div><span class="cta-pill">Iniciar processo de certificação</span>
+    </div>
+  </div>
+</div>
+
+</main>
+<footer>
+  <div class="fb">Marcas próprias <strong>fortes</strong> com Amicci · Documento vivo — atualizar conforme aprovações e entregas</div>
+  <a href="https://www.amicci.com.br" style="color:var(--t);font-size:10px;font-weight:500">www.amicci.com.br</a>
+</footer>
+<script>
+function showTab(id){
+  document.querySelectorAll('.section').forEach(s=>s.classList.remove('active'));
+  document.querySelectorAll('.tab').forEach(t=>t.classList.remove('active'));
+  document.getElementById(id).classList.add('active');
+  event.target.classList.add('active');
+  window.scrollTo(0,0);
+}
+function togglePost(el){
+  // post-toggle is inside .td-inner, post-body is sibling of .td-inner inside the <td>
+  const tdInner=el.closest('.td-inner');
+  const body=tdInner ? tdInner.parentElement.querySelector('.post-body') : el.nextElementSibling;
+  if(!body) return;
+  const icon=el.querySelector('.ti');
+  const open=body.classList.contains('open');
+  body.classList.toggle('open',!open);
+  icon.style.transform=open?'':'rotate(90deg)';
+}
+function tE(h){
+  const b=h.nextElementSibling;
+  const i=h.querySelector('.ticon');
+  const open=b.classList.contains('open');
+  b.classList.toggle('open',!open);
+  i.style.transform=open?'':'rotate(90deg)';
+}
+</script>
+</body>
+</html>
